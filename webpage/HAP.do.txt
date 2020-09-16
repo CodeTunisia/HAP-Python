@@ -1,0 +1,25 @@
+TITLE: Formation Python (HAP - 2020/2021)
+AUTHOR: Ahmed Ammar {copyright|GPL3} Email:ahmed.ammar@fst.utm.tn at Institut Préparatoire aux Études Scientifiques et Techniques, Université de Carthage.
+
+!bwarning
+Le matériel pédagogique est produit dans divers formats pour l’impression et la lecture à l’écran.
+Si vous constatez des erreurs signalez-les simplement aux auteurs:
+* Les fichiers PDF sont basés sur LaTeX et présentent rarement des problèmes techniques difficiles à corriger.
+* Les fichiers HTML, nommés "HTML" et "jupyter/ipython" ci-dessous, appliquent MathJax pour le rendu des formules LaTeX. Cette technologie donne parfois lieu à des échecs inattendus (par exemple, un rendu incorrect dans une page Web malgré la syntaxe correcte de LaTeX dans la formule).
+* Consultez les fichiers PDF correspondants si vous trouvez des formules manquantes ou mal rendues dans des fichiers HTML ou jupyter/ipython.
+!ewarning
+DATE: today
+
+!split
+======= Documents =======
+!split
+===== Chapitre I : Introduction au langage de programmation Python =====
+# * Notebook:
+#   * "jupyter/ipython" : "https://astrax.github.io/FormationPythonHAP2019-2020/pub/cours0/cours0.ipynb"
+#   * "Les figures" : "https://astrax.github.io/FormationPythonHAP2019-2020/pub/cours0/ipynb-cours0-src.tar.gz"
+* HTML (simple) :
+  * Cours
+  * TD
+* PDF :
+  * Cours
+  * TD
