@@ -173,11 +173,6 @@ MathJax.Hub.Config({
 &nbsp; &nbsp; &nbsp; <a href="#___sec16"> Le type bool (bool&#233;en) </a><br>
 <a href="#___sec17"> Types compos&#233;s </a><br>
 &nbsp; &nbsp; &nbsp; <a href="#___sec18"> Le type str (string : cha&#238;ne de caract&#232;res) </a><br>
-<a href="#___sec19"> Les conditions </a><br>
-&nbsp; &nbsp; &nbsp; <a href="#___sec20"> L'instruction <code>if</code> </a><br>
-&nbsp; &nbsp; &nbsp; <a href="#___sec22"> L'instruction <code>else</code> </a><br>
-&nbsp; &nbsp; &nbsp; <a href="#___sec24"> L'instruction <code>elif</code> </a><br>
-&nbsp; &nbsp; &nbsp; <a href="#___sec26"> Exercise 1: Condition sur le jour de travail </a><br>
 </p>
 <p>
 
@@ -927,272 +922,214 @@ Out[<span style="color: #B452CD">15</span>]: [[<span style="color: #B452CD">0</s
 
 
 <section>
-<h1 id="___sec19">Les conditions </h1>
-
-<h2 id="___sec20">L'instruction <code>if</code> </h2>
-En programmation, nous avons toujours besoin de la notion de condition pour permettre &#224; un programme de s'adapter &#224; diff&#233;rents cas de figure.
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b>Syntaxe.</b>
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">if</span> expression: <span style="color: #228B22"># ne pas oublier le signe de ponctuation &#39;:&#39;</span>
-    <span style="color: #CD5555">&quot;bloc d&#39;instructions&quot;</span> <span style="color: #228B22"># attention à l&#39;indentation (1 Tab ou 4 * Espaces)</span>
-<span style="color: #228B22"># suite du programme</span>
-</pre></div>
-
-</div>
-
-
-<ul>
-<p><li> Si l'expression est vraie (<code>True</code>) alors le bloc d'instructions est ex&#233;cut&#233;.</li>
-<p><li> Si l'expression est fausse (<code>False</code>) on passe directement &#224; la suite du programme.</li>
-</ul>
-
-<h3 id="___sec21">Exemple 1: Note sur 20 </h3>
-
-Dans cet exemple nous allons tester si la note entr&#233;e par l'utilisateur. Si la note est > 10 on doit recevoir le message: "J'ai la moyenne" sinon il va rien faire.
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>chaine = <span style="color: #658b00">input</span>(<span style="color: #CD5555">&quot;Note sur 20 : &quot;</span>)
-note = <span style="color: #658b00">float</span>(chaine)
-<span style="color: #8B008B; font-weight: bold">if</span> note &gt;= <span style="color: #B452CD">10.0</span>:
-    <span style="color: #228B22"># ce bloc est exécuté si l&#39;expression (note &gt;= 10.0) est vraie</span>
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;J&#39;ai la moyenne&quot;</span>)
-
-<span style="color: #228B22"># suite du programme</span>
-<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Fin du programme&quot;</span>)
-</pre></div>
-<p>
-<div class="alert alert-block alert-notice alert-text-normal">
-<b>Notice.</b>
-<ul>
-<p><li> Les blocs de code sont d&#233;limit&#233;s par l'indentation.</li>
-<p><li> L'indentation est obligatoire dans les scripts.</li>
-</ul>
-</div>
-
-<h2 id="___sec22">L'instruction <code>else</code> </h2>
-
-<p>
-Une instruction <code>else</code> est toujours associ&#233;e &#224; une instruction <code>if</code>.
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b>Syntaxe.</b>
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">if</span> expression:
-    <span style="color: #CD5555">&quot;bloc d&#39;instructions 1&quot;</span>    <span style="color: #228B22"># attention à l&#39;indentation (1 Tab ou 4 * Espaces)</span>
-<span style="color: #8B008B; font-weight: bold">else</span>:                          <span style="color: #228B22"># else est au même niveau que if</span>
-    <span style="color: #CD5555">&quot;bloc d&#39;instructions 2&quot;</span>    <span style="color: #228B22"># attention à l&#39;indentation</span>
-<span style="color: #228B22"># suite du programme</span>
-</pre></div>
-
-</div>
-
-
-<ul>
-<p><li> Si l'expression est vraie (<code>True</code>) alors le bloc d'instructions 1 est ex&#233;cut&#233;.</li>
-<p><li> Si l'expression est fausse (<code>False</code>) alors c'est le bloc d'instructions 2 qui est ex&#233;cut&#233;.</li>
-</ul>
-
-<h3 id="___sec23">Exemple 2 : moyenne </h3>
-
-Dans cet exemple nous allons tester si la note entr&#233;e par l'utilisateur. Si la note est > 10 on doit recevoir le message: "J'ai la moyenne" sinon il va afficher "C'est en dessous de la moyenne".
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>chaine = <span style="color: #658b00">input</span>(<span style="color: #CD5555">&quot;Note sur 20 : &quot;</span>)
-note = <span style="color: #658b00">float</span>(chaine)
-<span style="color: #8B008B; font-weight: bold">if</span> note &gt;= <span style="color: #B452CD">10.0</span>:
-    <span style="color: #228B22"># ce bloc est exécuté si l&#39;expression (note &gt;= 10.0) est vraie</span>
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;J&#39;ai la moyenne&quot;</span>)
-<span style="color: #8B008B; font-weight: bold">else</span>:
-    <span style="color: #228B22"># ce bloc est exécuté si l&#39;expression (note &gt;= 10.0) est fausse</span>
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;C&#39;est en dessous de la moyenne&quot;</span>)
-<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Fin du programme&quot;</span>)
-</pre></div>
-<p>
-Pour traiter le cas des notes invalides (\( < 0 \) ou \( >20 \)), on peut imbriquer des instructions conditionnelles :
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>chaine = <span style="color: #658b00">input</span>(<span style="color: #CD5555">&quot;Note sur 20 : &quot;</span>)
-note = <span style="color: #658b00">float</span>(chaine)
-<span style="color: #8B008B; font-weight: bold">if</span> note &gt; <span style="color: #B452CD">20.0</span> <span style="color: #8B008B">or</span> note &lt; <span style="color: #B452CD">0.0</span>:
-    <span style="color: #228B22"># ce bloc est exécuté si l&#39;expression (note &gt; 20.0 or note &lt; 0.0) est vraie</span>
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Note invalide !&quot;</span>)
-<span style="color: #8B008B; font-weight: bold">else</span>:
-    <span style="color: #228B22"># ce bloc est exécuté si l&#39;expression (note &gt; 20.0 or note &lt; 0.0) est fausse</span>
-    <span style="color: #8B008B; font-weight: bold">if</span> note &gt;= <span style="color: #B452CD">10.0</span>:
-        <span style="color: #228B22"># ce bloc est exécuté si l&#39;expression (note &gt;= 10.0) est vraie</span>
-        <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;J&#39;ai la moyenne&quot;</span>)
-    <span style="color: #8B008B; font-weight: bold">else</span>:
-        <span style="color: #228B22"># ce bloc est exécuté si l&#39;expression (note &gt;= 10.0) est fausse</span>
-        <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;C&#39;est en dessous de la moyenne&quot;</span>)
-<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Fin du programme&quot;</span>)
-</pre></div>
-<p>
-Ou bien encore:
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>chaine = <span style="color: #658b00">input</span>(<span style="color: #CD5555">&quot;Note sur 20 : &quot;</span>)
-note = <span style="color: #658b00">float</span>(chaine)
-<span style="color: #8B008B; font-weight: bold">if</span> note &gt; <span style="color: #B452CD">20.0</span> <span style="color: #8B008B">or</span> note &lt; <span style="color: #B452CD">0.0</span>:
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Note invalide !&quot;</span>)
-<span style="color: #8B008B; font-weight: bold">else</span>:
-    <span style="color: #8B008B; font-weight: bold">if</span> note &gt;= <span style="color: #B452CD">10.0</span>:
-        <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;J&#39;ai la moyenne&quot;</span>)
-        <span style="color: #8B008B; font-weight: bold">if</span> note == <span style="color: #B452CD">20.0</span>:
-            <span style="color: #228B22"># ce bloc est exécuté si l&#39;expression (note == 20.0) est vraie</span>
-            <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;C&#39;est même excellent !&quot;</span>)
-    <span style="color: #8B008B; font-weight: bold">else</span>:
-        <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;C&#39;est en dessous de la moyenne&quot;</span>)
-        <span style="color: #8B008B; font-weight: bold">if</span> note == <span style="color: #B452CD">0.0</span>:
-            <span style="color: #228B22"># ce bloc est exécuté si l&#39;expression (note == 0.0) est vraie</span>
-            <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;... lamentable !&quot;</span>)
-<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Fin du programme&quot;</span>)
-</pre></div>
+<!-- ======= Les conditions ======= -->
+<!-- ===== L'instruction <code>if</code> ===== -->
+<!-- En programmation, nous avons toujours besoin de la notion de condition pour permettre &#224; un programme de s'adapter &#224; diff&#233;rents cas de figure. -->
+<!--  -->
+<!-- !bblock Syntaxe -->
+<!--  -->
+<!-- !bc pycod-t -->
+<!-- if expression: # ne pas oublier le signe de ponctuation ':' -->
+<!-- "bloc d'instructions" # attention &#224; l'indentation (1 Tab ou 4 * Espaces) -->
+<!-- # suite du programme -->
+<!-- !ec -->
+<!-- !eblock -->
+<!--  -->
+<!-- * Si l'expression est vraie (<code>True</code>) alors le bloc d'instructions est ex&#233;cut&#233;. -->
+<!--  -->
+<!-- * Si l'expression est fausse (<code>False</code>) on passe directement &#224; la suite du programme. -->
+<!--  -->
+<!-- === Exemple 1: Note sur 20 === -->
+<!-- Dans cet exemple nous allons tester si la note entr&#233;e par l'utilisateur. Si la note est > 10 on doit recevoir le message: "J'ai la moyenne" sinon il va rien faire. -->
+<!-- !bc pycod -->
+<!-- chaine = input("Note sur 20 : ") -->
+<!-- note = float(chaine) -->
+<!-- if note >= 10.0: -->
+<!-- # ce bloc est ex&#233;cut&#233; si l'expression (note >= 10.0) est vraie -->
+<!-- print("J'ai la moyenne") -->
+<!--  -->
+<!-- # suite du programme -->
+<!-- print("Fin du programme") -->
+<!-- !ec -->
+<!--  -->
+<!-- !bnotice -->
+<!-- * Les blocs de code sont d&#233;limit&#233;s par l'indentation. -->
+<!-- * L'indentation est obligatoire dans les scripts. -->
+<!-- !enotice -->
+<!--  -->
+<!-- ===== L'instruction <code>else</code> ===== -->
+<!--  -->
+<!-- Une instruction <code>else</code> est toujours associ&#233;e &#224; une instruction <code>if</code>. -->
+<!--  -->
+<!-- !bblock Syntaxe -->
+<!--  -->
+<!-- !bc pycod-t -->
+<!-- if expression: -->
+<!-- "bloc d'instructions 1"    # attention &#224; l'indentation (1 Tab ou 4 * Espaces) -->
+<!-- else:                          # else est au m&#234;me niveau que if -->
+<!-- "bloc d'instructions 2"    # attention &#224; l'indentation -->
+<!-- # suite du programme -->
+<!-- !ec -->
+<!-- !eblock -->
+<!--  -->
+<!-- * Si l'expression est vraie (<code>True</code>) alors le bloc d'instructions 1 est ex&#233;cut&#233;. -->
+<!-- * Si l'expression est fausse (<code>False</code>) alors c'est le bloc d'instructions 2 qui est ex&#233;cut&#233;. -->
+<!--  -->
+<!-- === Exemple 2 : moyenne === -->
+<!-- Dans cet exemple nous allons tester si la note entr&#233;e par l'utilisateur. Si la note est > 10 on doit recevoir le message: "J'ai la moyenne" sinon il va afficher "C'est en dessous de la moyenne". -->
+<!--  -->
+<!-- !bc pycod -->
+<!-- chaine = input("Note sur 20 : ") -->
+<!-- note = float(chaine) -->
+<!-- if note >= 10.0: -->
+<!-- # ce bloc est ex&#233;cut&#233; si l'expression (note >= 10.0) est vraie -->
+<!-- print("J'ai la moyenne") -->
+<!-- else: -->
+<!-- # ce bloc est ex&#233;cut&#233; si l'expression (note >= 10.0) est fausse -->
+<!-- print("C'est en dessous de la moyenne") -->
+<!-- print("Fin du programme") -->
+<!-- !ec -->
+<!--  -->
+<!-- Pour traiter le cas des notes invalides (\( <0 \) ou \( >20 \)), on peut imbriquer des instructions conditionnelles : -->
+<!--  -->
+<!-- !bc pycod -->
+<!-- chaine = input("Note sur 20 : ") -->
+<!-- note = float(chaine) -->
+<!-- if note > 20.0 or note < 0.0: -->
+<!-- # ce bloc est ex&#233;cut&#233; si l'expression (note > 20.0 or note < 0.0) est vraie -->
+<!-- print("Note invalide !") -->
+<!-- else: -->
+<!-- # ce bloc est ex&#233;cut&#233; si l'expression (note > 20.0 or note < 0.0) est fausse -->
+<!-- if note >= 10.0: -->
+<!-- # ce bloc est ex&#233;cut&#233; si l'expression (note >= 10.0) est vraie -->
+<!-- print("J'ai la moyenne") -->
+<!-- else: -->
+<!-- # ce bloc est ex&#233;cut&#233; si l'expression (note >= 10.0) est fausse -->
+<!-- print("C'est en dessous de la moyenne") -->
+<!-- print("Fin du programme") -->
+<!-- !ec -->
+<!-- Ou bien encore: -->
+<!-- !bc pycod -->
+<!-- chaine = input("Note sur 20 : ") -->
+<!-- note = float(chaine) -->
+<!-- if note > 20.0 or note < 0.0: -->
+<!-- print("Note invalide !") -->
+<!-- else: -->
+<!-- if note >= 10.0: -->
+<!-- print("J'ai la moyenne") -->
+<!-- if note == 20.0: -->
+<!-- # ce bloc est ex&#233;cut&#233; si l'expression (note == 20.0) est vraie -->
+<!-- print("C'est m&#234;me excellent !") -->
+<!-- else: -->
+<!-- print("C'est en dessous de la moyenne") -->
+<!-- if note == 0.0: -->
+<!-- # ce bloc est ex&#233;cut&#233; si l'expression (note == 0.0) est vraie -->
+<!-- print("... lamentable !") -->
+<!-- print("Fin du programme") -->
+<!-- !ec -->
+<!--  -->
 </section>
 
 
 <section>
-<h2 id="___sec24">L'instruction <code>elif</code> </h2>
-Une instruction <code>elif</code> (contraction de <b>else if</b>) est toujours associ&#233;e &#224; une instruction <code>if</code>.
-
-<p>
-<div class="alert alert-block alert-block alert-text-normal">
-<b>Syntaxe.</b>
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">if</span> expression <span style="color: #B452CD">1</span>:
-    <span style="color: #CD5555">&quot;bloc d&#39;instructions 1&quot;</span>
-<span style="color: #8B008B; font-weight: bold">elif</span> expression <span style="color: #B452CD">2</span>:
-    <span style="color: #CD5555">&quot;bloc d&#39;instructions 2&quot;</span>
-<span style="color: #8B008B; font-weight: bold">elif</span> expression <span style="color: #B452CD">3</span>:
-    <span style="color: #CD5555">&quot;bloc d&#39;instructions 3&quot;</span>    <span style="color: #228B22"># ici deux instructions elif, mais il n&#39;y a pas de limitation</span>
-<span style="color: #8B008B; font-weight: bold">else</span>:
-    <span style="color: #CD5555">&quot;bloc d&#39;instructions 4&quot;</span>
-<span style="color: #228B22"># suite du programme</span>
-</pre></div>
-
-</div>
-
-
-<ul>
-<p><li> Si l'expression 1 est vraie alors le bloc d'instructions 1 est ex&#233;cut&#233;, et on passe &#224; la suite du programme.</li>
-<p><li> Si l'expression 1 est fausse alors on teste l'expression 2 :</li>
-<p><li> si l'expression 2 est vraie on ex&#233;cute le bloc d'instructions 2, et on passe &#224; la suite du programme.</li>
-<p><li> si l'expression 2 est fausse alors on teste l'expression 3, etc.</li>
-</ul>
-<p>
-
-Le bloc d'instructions 4 est donc ex&#233;cut&#233; si toutes les expressions sont fausses (c'est le bloc "par d&#233;faut").
-
-<p>
-Parfois il n'y a rien &#224; faire. Dans ce cas, on peut omettre l'instruction <code>else</code> :
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span><span style="color: #8B008B; font-weight: bold">if</span> expression <span style="color: #B452CD">1</span>:
-    <span style="color: #CD5555">&quot;bloc d&#39;instructions 1&quot;</span>
-<span style="color: #8B008B; font-weight: bold">elif</span> expression <span style="color: #B452CD">2</span>:
-    <span style="color: #CD5555">&quot;bloc d&#39;instructions 2&quot;</span>
-<span style="color: #8B008B; font-weight: bold">elif</span> expression <span style="color: #B452CD">3</span>:
-    <span style="color: #CD5555">&quot;bloc d&#39;instructions 3&quot;</span>
-<span style="color: #228B22"># suite du programme</span>
-</pre></div>
-<p>
-L'instruction <code>elif</code> &#233;vite souvent l'utilisation de conditions imbriqu&#233;es (et souvent compliqu&#233;es).
-
-<h3 id="___sec25">Exemple 3 : moyenne-bis </h3>
-
-On peut tester plusieurs possibilit&#233;s avec une syntaxe beaucoup plus propre avec les instructions <code>if-elif-else</code>:
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>note = <span style="color: #658b00">float</span>(<span style="color: #658b00">input</span>(<span style="color: #CD5555">&quot;Note sur 20 : &quot;</span>))
-<span style="color: #8B008B; font-weight: bold">if</span> note == <span style="color: #B452CD">0.0</span>:
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;C&#39;est en dessous de la moyenne&quot;</span>)
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;... lamentable!&quot;</span>)
-<span style="color: #8B008B; font-weight: bold">elif</span> note == <span style="color: #B452CD">20.0</span>:
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;J&#39;ai la moyenne&quot;</span>)
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;C&#39;est même excellent !&quot;</span>)
-<span style="color: #8B008B; font-weight: bold">elif</span> <span style="color: #B452CD">0</span> &lt; note &lt; <span style="color: #B452CD">10</span>:    <span style="color: #228B22"># ou bien : elif 0.0 &lt; note &lt; 10.0:</span>
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;C&#39;est en dessous de la moyenne&quot;</span>)
-<span style="color: #8B008B; font-weight: bold">elif</span> note &gt;= <span style="color: #B452CD">10.0</span> <span style="color: #8B008B">and</span> note &lt; <span style="color: #B452CD">20.0</span>:   <span style="color: #228B22"># ou bien : elif 10.0 &lt;= note &lt; 20.0:</span>
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;J&#39;ai la moyenne&quot;</span>)
-<span style="color: #8B008B; font-weight: bold">else</span>:
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Note invalide !&quot;</span>)
-<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Fin du programme&quot;</span>)
-</pre></div>
+<!-- ===== L'instruction <code>elif</code> ===== -->
+<!-- Une instruction <code>elif</code> (contraction de <b>else if</b>) est toujours associ&#233;e &#224; une instruction <code>if</code>. -->
+<!--  -->
+<!-- !bblock Syntaxe -->
+<!--  -->
+<!-- !bc pycod-t -->
+<!-- if expression 1: -->
+<!-- "bloc d'instructions 1" -->
+<!-- elif expression 2: -->
+<!-- "bloc d'instructions 2" -->
+<!-- elif expression 3: -->
+<!-- "bloc d'instructions 3"    # ici deux instructions elif, mais il n'y a pas de limitation -->
+<!-- else: -->
+<!-- "bloc d'instructions 4" -->
+<!-- # suite du programme -->
+<!-- !ec -->
+<!-- !eblock -->
+<!--  -->
+<!-- * Si l'expression 1 est vraie alors le bloc d'instructions 1 est ex&#233;cut&#233;, et on passe &#224; la suite du programme. -->
+<!-- * Si l'expression 1 est fausse alors on teste l'expression 2 : -->
+<!--  -->
+<!-- * si l'expression 2 est vraie on ex&#233;cute le bloc d'instructions 2, et on passe &#224; la suite du programme. -->
+<!-- * si l'expression 2 est fausse alors on teste l'expression 3, etc. -->
+<!--  -->
+<!-- Le bloc d'instructions 4 est donc ex&#233;cut&#233; si toutes les expressions sont fausses (c'est le bloc "par d&#233;faut"). -->
+<!--  -->
+<!-- Parfois il n'y a rien &#224; faire. Dans ce cas, on peut omettre l'instruction <code>else</code> : -->
+<!--  -->
+<!-- !bc pycod-t -->
+<!-- if expression 1: -->
+<!-- "bloc d'instructions 1" -->
+<!-- elif expression 2: -->
+<!-- "bloc d'instructions 2" -->
+<!-- elif expression 3: -->
+<!-- "bloc d'instructions 3" -->
+<!-- # suite du programme -->
+<!-- !ec -->
+<!--  -->
+<!--  -->
+<!-- L'instruction <code>elif</code> &#233;vite souvent l'utilisation de conditions imbriqu&#233;es (et souvent compliqu&#233;es). -->
+<!--  -->
+<!-- === Exemple 3 : moyenne-bis === -->
+<!-- On peut tester plusieurs possibilit&#233;s avec une syntaxe beaucoup plus propre avec les instructions <code>if-elif-else</code>: -->
+<!-- !bc pycod -->
+<!-- note = float(input("Note sur 20 : ")) -->
+<!-- if note == 0.0: -->
+<!-- print("C'est en dessous de la moyenne") -->
+<!-- print("... lamentable!") -->
+<!-- elif note == 20.0: -->
+<!-- print("J'ai la moyenne") -->
+<!-- print("C'est m&#234;me excellent !") -->
+<!-- elif 0 < note < 10:    # ou bien : elif 0.0 < note < 10.0: -->
+<!-- print("C'est en dessous de la moyenne") -->
+<!-- elif note >= 10.0 and note < 20.0:   # ou bien : elif 10.0 <= note < 20.0: -->
+<!-- print("J'ai la moyenne") -->
+<!-- else: -->
+<!-- print("Note invalide !") -->
+<!-- print("Fin du programme") -->
+<!-- !ec -->
+<!--  -->
 </section>
 
 
 <section>
-
-<p>
-<!-- --- begin exercise --- -->
-
-<h2 id="___sec26">Exercise 1: Condition sur le jour de travail </h2>
-
-<p>
-Si aujourd'hui est lundi alors je dois aller travailler, mais si c'est dimanche alors je peux rester faire la grasse matin&#233;e. Pour pouvoir accomplir ce genre de choses en Python, on fait appel &#224; des expressions bool&#233;ennes qui ne peuvent rev&#234;tir que deux possibilit&#233;s - ou bien l'expression est vraie ou bien elle est fausse - et &#224; la syntaxe if condition: qui permet de contr&#244;ler le flux du programme gr&#226;ce &#224; ces valeurs bool&#233;ennes.
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>day_week = [<span style="color: #CD5555">&quot;Lundi&quot;</span>, <span style="color: #CD5555">&quot;Mardi&quot;</span>, <span style="color: #CD5555">&quot;Mercredi&quot;</span>, <span style="color: #CD5555">&quot;Jeudi&quot;</span>, <span style="color: #CD5555">&quot;Vendredi&quot;</span>,
-            <span style="color: #CD5555">&quot;Samedi&quot;</span>, <span style="color: #CD5555">&quot;Dimanche&quot;</span>]
-today = <span style="color: #658b00">input</span>(<span style="color: #CD5555">&quot;Aujourd&#39;hui est: &quot;</span>)
-
-<span style="color: #8B008B; font-weight: bold">if</span> *condition vraie*:  <span style="color: #228B22"># Quelle est la condition vraie dans ce cas?</span>
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Je dors le matin!&quot;</span>)
-<span style="color: #8B008B; font-weight: bold">else</span>:
-    <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Je travail le matin!&quot;</span>)
-
-<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Fin du programme&quot;</span>)
-</pre></div>
-<p>
-<!-- --- begin hint in exercise --- -->
-
-<p>
-<b>Hint.</b>
-Dans la <b>condition vraie</b>, utilisez l'op&#233;rateur logique <code>in</code> pour tester les &#233;l&#233;ments de la liste <code>day_week</code>.
-
-<p>
-<!-- --- end hint in exercise --- -->
-
-<p>
-<!-- --- begin solution of exercise --- -->
-<b>Solution.</b>
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "perldoc" -->
-<div class="highlight" style="background: #eeeedd"><pre style="font-size: 80%; line-height: 125%"><span></span>day_week = [<span style="color: #CD5555">&quot;Lundi&quot;</span>, <span style="color: #CD5555">&quot;Mardi&quot;</span>, <span style="color: #CD5555">&quot;Mercredi&quot;</span>, <span style="color: #CD5555">&quot;Jeudi&quot;</span>, <span style="color: #CD5555">&quot;Vendredi&quot;</span>, <span style="color: #CD5555">&quot;Samedi&quot;</span>, <span style="color: #CD5555">&quot;Dimanche&quot;</span>]
-today = <span style="color: #658b00">input</span>(<span style="color: #CD5555">&quot;Aujourd&#39;hui est: &quot;</span>)
-<span style="color: #8B008B; font-weight: bold">if</span> today <span style="color: #8B008B">in</span> day_week:
-    <span style="color: #8B008B; font-weight: bold">if</span> today == day_week[-<span style="color: #B452CD">1</span>]:  <span style="color: #228B22"># la condition vraie</span>
-        <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Je dors le matin!&quot;</span>)
-    <span style="color: #8B008B; font-weight: bold">else</span>:
-        <span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Je travail le matin!&quot;</span>)
-
-<span style="color: #658b00">print</span>(<span style="color: #CD5555">&quot;Fin du programme&quot;</span>)
-</pre></div>
-<p>
-<!-- --- end solution of exercise --- -->
-
-<p>
+<!-- ===== Exercise: Condition sur le jour de travail ===== -->
+<!--  -->
+<!-- Si aujourd'hui est lundi alors je dois aller travailler, mais si c'est dimanche alors je peux rester faire la grasse matin&#233;e. Pour pouvoir accomplir ce genre de choses en Python, on fait appel &#224; des expressions bool&#233;ennes qui ne peuvent rev&#234;tir que deux possibilit&#233;s - ou bien l'expression est vraie ou bien elle est fausse - et &#224; la syntaxe if condition: qui permet de contr&#244;ler le flux du programme gr&#226;ce &#224; ces valeurs bool&#233;ennes. -->
+<!--  -->
+<!-- !bc pycod-t -->
+<!-- day_week = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", -->
+<!-- "Samedi", "Dimanche"] -->
+<!-- today = input("Aujourd'hui est: ") -->
+<!--  -->
+<!-- if <em>condition vraie</em>:  # Quelle est la condition vraie dans ce cas? -->
+<!-- print("Je dors le matin!") -->
+<!-- else: -->
+<!-- print("Je travail le matin!") -->
+<!--  -->
+<!-- print("Fin du programme") -->
+<!-- !ec -->
+<!--  -->
+<!-- !bhint -->
+<!-- Dans la <b>condition vraie</b>, utilisez l'op&#233;rateur logique <code>in</code> pour tester les &#233;l&#233;ments de la liste <code>day_week</code>. -->
+<!-- !ehint -->
+<!--  -->
+<!-- !bsol -->
+<!-- !bc pycod -->
+<!-- day_week = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"] -->
+<!-- today = input("Aujourd'hui est: ") -->
+<!-- if today in day_week: -->
+<!-- if today == day_week[-1]:  # la condition vraie -->
+<!-- print("Je dors le matin!") -->
+<!-- else: -->
+<!-- print("Je travail le matin!") -->
+<!--  -->
+<!-- print("Fin du programme") -->
+<!-- !ec -->
+<!-- !esol -->
 <!-- ======= Les boucles ======= -->
 <!-- ===== L'instruction <code>while</code> ===== -->
 <!--  -->
@@ -1547,7 +1484,6 @@ $$T_F = T_C \times 1,8 + 32 $$
 <!-- for lettre in chaine:  # lettre est la variable d'it&#233;ration -->
 <!-- print(lettre) -->
 <!-- !ec -->
-<!-- --- end exercise --- -->
 </section>
 
 

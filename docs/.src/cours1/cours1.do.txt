@@ -567,209 +567,209 @@ In [15]: maliste
 Out[15]: [[0, 1, 2], [10, 11, 12], [20, 78, 22]]
 !ec
 
-!split
-======= Les conditions =======
-===== L'instruction `if` =====
-En programmation, nous avons toujours besoin de la notion de condition pour permettre à un programme de s'adapter à différents cas de figure.
-
-!bblock Syntaxe
-
-!bc pycod-t
-if expression: # ne pas oublier le signe de ponctuation ':'
-    "bloc d'instructions" # attention à l'indentation (1 Tab ou 4 * Espaces)
-# suite du programme
-!ec
-!eblock
-
-* Si l'expression est vraie (`True`) alors le bloc d'instructions est exécuté.
-
-* Si l'expression est fausse (`False`) on passe directement à la suite du programme.
-
-=== Exemple 1: Note sur 20 ===
-Dans cet exemple nous allons tester si la note entrée par l'utilisateur. Si la note est > 10 on doit recevoir le message: "J'ai la moyenne" sinon il va rien faire.
-!bc pycod
-chaine = input("Note sur 20 : ")
-note = float(chaine)
-if note >= 10.0:
-    # ce bloc est exécuté si l'expression (note >= 10.0) est vraie
-    print("J'ai la moyenne")
-
-# suite du programme
-print("Fin du programme")
-!ec
-
-!bnotice
-* Les blocs de code sont délimités par l'indentation.
-* L'indentation est obligatoire dans les scripts.
-!enotice
-
-===== L'instruction `else` =====
-
-Une instruction `else` est toujours associée à une instruction `if`.
-
-!bblock Syntaxe
-
-!bc pycod-t
-if expression:
-    "bloc d'instructions 1"    # attention à l'indentation (1 Tab ou 4 * Espaces)
-else:                          # else est au même niveau que if
-    "bloc d'instructions 2"    # attention à l'indentation
-# suite du programme
-!ec
-!eblock
-
-* Si l'expression est vraie (`True`) alors le bloc d'instructions 1 est exécuté.
-* Si l'expression est fausse (`False`) alors c'est le bloc d'instructions 2 qui est exécuté.
-
-=== Exemple 2 : moyenne ===
-Dans cet exemple nous allons tester si la note entrée par l'utilisateur. Si la note est > 10 on doit recevoir le message: "J'ai la moyenne" sinon il va afficher "C'est en dessous de la moyenne".
-
-!bc pycod
-chaine = input("Note sur 20 : ")
-note = float(chaine)
-if note >= 10.0:
-    # ce bloc est exécuté si l'expression (note >= 10.0) est vraie
-    print("J'ai la moyenne")
-else:
-    # ce bloc est exécuté si l'expression (note >= 10.0) est fausse
-    print("C'est en dessous de la moyenne")
-print("Fin du programme")
-!ec
-
-Pour traiter le cas des notes invalides ($<0$ ou $>20$), on peut imbriquer des instructions conditionnelles :
-
-!bc pycod
-chaine = input("Note sur 20 : ")
-note = float(chaine)
-if note > 20.0 or note < 0.0:
-    # ce bloc est exécuté si l'expression (note > 20.0 or note < 0.0) est vraie
-    print("Note invalide !")
-else:
-    # ce bloc est exécuté si l'expression (note > 20.0 or note < 0.0) est fausse
-    if note >= 10.0:
-        # ce bloc est exécuté si l'expression (note >= 10.0) est vraie
-        print("J'ai la moyenne")
-    else:
-        # ce bloc est exécuté si l'expression (note >= 10.0) est fausse
-        print("C'est en dessous de la moyenne")
-print("Fin du programme")
-!ec
-Ou bien encore:
-!bc pycod
-chaine = input("Note sur 20 : ")
-note = float(chaine)
-if note > 20.0 or note < 0.0:
-    print("Note invalide !")
-else:
-    if note >= 10.0:
-        print("J'ai la moyenne")
-        if note == 20.0:
-            # ce bloc est exécuté si l'expression (note == 20.0) est vraie
-            print("C'est même excellent !")
-    else:
-        print("C'est en dessous de la moyenne")
-        if note == 0.0:
-            # ce bloc est exécuté si l'expression (note == 0.0) est vraie
-            print("... lamentable !")
-print("Fin du programme")
-!ec
-
-!split
-===== L'instruction `elif` =====
-Une instruction `elif` (contraction de _else if_) est toujours associée à une instruction `if`.
-
-!bblock Syntaxe
-
-!bc pycod-t
-if expression 1:
-    "bloc d'instructions 1"
-elif expression 2:
-    "bloc d'instructions 2"
-elif expression 3:
-    "bloc d'instructions 3"    # ici deux instructions elif, mais il n'y a pas de limitation
-else:
-    "bloc d'instructions 4"
-# suite du programme
-!ec
-!eblock
-
-* Si l'expression 1 est vraie alors le bloc d'instructions 1 est exécuté, et on passe à la suite du programme.
-* Si l'expression 1 est fausse alors on teste l'expression 2 :
-
-* si l'expression 2 est vraie on exécute le bloc d'instructions 2, et on passe à la suite du programme.
-* si l'expression 2 est fausse alors on teste l'expression 3, etc.
-
-Le bloc d'instructions 4 est donc exécuté si toutes les expressions sont fausses (c'est le bloc "par défaut").
-
-Parfois il n'y a rien à faire. Dans ce cas, on peut omettre l'instruction `else` :
-
-!bc pycod-t
-if expression 1:
-    "bloc d'instructions 1"
-elif expression 2:
-    "bloc d'instructions 2"
-elif expression 3:
-    "bloc d'instructions 3"
-# suite du programme
-!ec
-
-
-L'instruction `elif` évite souvent l'utilisation de conditions imbriquées (et souvent compliquées).
-
-=== Exemple 3 : moyenne-bis ===
-On peut tester plusieurs possibilités avec une syntaxe beaucoup plus propre avec les instructions `if-elif-else`:
-!bc pycod
-note = float(input("Note sur 20 : "))
-if note == 0.0:
-    print("C'est en dessous de la moyenne")
-    print("... lamentable!")
-elif note == 20.0:
-    print("J'ai la moyenne")
-    print("C'est même excellent !")
-elif 0 < note < 10:    # ou bien : elif 0.0 < note < 10.0:
-    print("C'est en dessous de la moyenne")
-elif note >= 10.0 and note < 20.0:   # ou bien : elif 10.0 <= note < 20.0:
-    print("J'ai la moyenne")
-else:
-    print("Note invalide !")
-print("Fin du programme")
-!ec
-
-!split
-===== Exercise: Condition sur le jour de travail =====
-
-Si aujourd'hui est lundi alors je dois aller travailler, mais si c'est dimanche alors je peux rester faire la grasse matinée. Pour pouvoir accomplir ce genre de choses en Python, on fait appel à des expressions booléennes qui ne peuvent revêtir que deux possibilités - ou bien l'expression est vraie ou bien elle est fausse - et à la syntaxe if condition: qui permet de contrôler le flux du programme grâce à ces valeurs booléennes.
-
-!bc pycod-t
-day_week = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi",
-            "Samedi", "Dimanche"]
-today = input("Aujourd'hui est: ")
-
-if *condition vraie*:  # Quelle est la condition vraie dans ce cas?
-    print("Je dors le matin!")
-else:
-    print("Je travail le matin!")
-
-print("Fin du programme")
-!ec
-
-!bhint
-Dans la _condition vraie_, utilisez l'opérateur logique `in` pour tester les éléments de la liste `day_week`.
-!ehint
-
-!bsol
-!bc pycod
-day_week = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
-today = input("Aujourd'hui est: ")
-if today in day_week:
-    if today == day_week[-1]:  # la condition vraie
-        print("Je dors le matin!")
-    else:
-        print("Je travail le matin!")
-
-print("Fin du programme")
-!ec
-!esol
+# !split
+# ======= Les conditions =======
+# ===== L'instruction `if` =====
+# En programmation, nous avons toujours besoin de la notion de condition pour permettre à un programme de s'adapter à différents cas de figure.
+#
+# !bblock Syntaxe
+#
+# !bc pycod-t
+# if expression: # ne pas oublier le signe de ponctuation ':'
+#     "bloc d'instructions" # attention à l'indentation (1 Tab ou 4 * Espaces)
+# # suite du programme
+# !ec
+# !eblock
+#
+# * Si l'expression est vraie (`True`) alors le bloc d'instructions est exécuté.
+#
+# * Si l'expression est fausse (`False`) on passe directement à la suite du programme.
+#
+# === Exemple 1: Note sur 20 ===
+# Dans cet exemple nous allons tester si la note entrée par l'utilisateur. Si la note est > 10 on doit recevoir le message: "J'ai la moyenne" sinon il va rien faire.
+# !bc pycod
+# chaine = input("Note sur 20 : ")
+# note = float(chaine)
+# if note >= 10.0:
+#     # ce bloc est exécuté si l'expression (note >= 10.0) est vraie
+#     print("J'ai la moyenne")
+#
+# # suite du programme
+# print("Fin du programme")
+# !ec
+#
+# !bnotice
+# * Les blocs de code sont délimités par l'indentation.
+# * L'indentation est obligatoire dans les scripts.
+# !enotice
+#
+# ===== L'instruction `else` =====
+#
+# Une instruction `else` est toujours associée à une instruction `if`.
+#
+# !bblock Syntaxe
+#
+# !bc pycod-t
+# if expression:
+#     "bloc d'instructions 1"    # attention à l'indentation (1 Tab ou 4 * Espaces)
+# else:                          # else est au même niveau que if
+#     "bloc d'instructions 2"    # attention à l'indentation
+# # suite du programme
+# !ec
+# !eblock
+#
+# * Si l'expression est vraie (`True`) alors le bloc d'instructions 1 est exécuté.
+# * Si l'expression est fausse (`False`) alors c'est le bloc d'instructions 2 qui est exécuté.
+#
+# === Exemple 2 : moyenne ===
+# Dans cet exemple nous allons tester si la note entrée par l'utilisateur. Si la note est > 10 on doit recevoir le message: "J'ai la moyenne" sinon il va afficher "C'est en dessous de la moyenne".
+#
+# !bc pycod
+# chaine = input("Note sur 20 : ")
+# note = float(chaine)
+# if note >= 10.0:
+#     # ce bloc est exécuté si l'expression (note >= 10.0) est vraie
+#     print("J'ai la moyenne")
+# else:
+#     # ce bloc est exécuté si l'expression (note >= 10.0) est fausse
+#     print("C'est en dessous de la moyenne")
+# print("Fin du programme")
+# !ec
+#
+# Pour traiter le cas des notes invalides ($<0$ ou $>20$), on peut imbriquer des instructions conditionnelles :
+#
+# !bc pycod
+# chaine = input("Note sur 20 : ")
+# note = float(chaine)
+# if note > 20.0 or note < 0.0:
+#     # ce bloc est exécuté si l'expression (note > 20.0 or note < 0.0) est vraie
+#     print("Note invalide !")
+# else:
+#     # ce bloc est exécuté si l'expression (note > 20.0 or note < 0.0) est fausse
+#     if note >= 10.0:
+#         # ce bloc est exécuté si l'expression (note >= 10.0) est vraie
+#         print("J'ai la moyenne")
+#     else:
+#         # ce bloc est exécuté si l'expression (note >= 10.0) est fausse
+#         print("C'est en dessous de la moyenne")
+# print("Fin du programme")
+# !ec
+# Ou bien encore:
+# !bc pycod
+# chaine = input("Note sur 20 : ")
+# note = float(chaine)
+# if note > 20.0 or note < 0.0:
+#     print("Note invalide !")
+# else:
+#     if note >= 10.0:
+#         print("J'ai la moyenne")
+#         if note == 20.0:
+#             # ce bloc est exécuté si l'expression (note == 20.0) est vraie
+#             print("C'est même excellent !")
+#     else:
+#         print("C'est en dessous de la moyenne")
+#         if note == 0.0:
+#             # ce bloc est exécuté si l'expression (note == 0.0) est vraie
+#             print("... lamentable !")
+# print("Fin du programme")
+# !ec
+#
+# !split
+# ===== L'instruction `elif` =====
+# Une instruction `elif` (contraction de _else if_) est toujours associée à une instruction `if`.
+#
+# !bblock Syntaxe
+#
+# !bc pycod-t
+# if expression 1:
+#     "bloc d'instructions 1"
+# elif expression 2:
+#     "bloc d'instructions 2"
+# elif expression 3:
+#     "bloc d'instructions 3"    # ici deux instructions elif, mais il n'y a pas de limitation
+# else:
+#     "bloc d'instructions 4"
+# # suite du programme
+# !ec
+# !eblock
+#
+# * Si l'expression 1 est vraie alors le bloc d'instructions 1 est exécuté, et on passe à la suite du programme.
+# * Si l'expression 1 est fausse alors on teste l'expression 2 :
+#
+# * si l'expression 2 est vraie on exécute le bloc d'instructions 2, et on passe à la suite du programme.
+# * si l'expression 2 est fausse alors on teste l'expression 3, etc.
+#
+# Le bloc d'instructions 4 est donc exécuté si toutes les expressions sont fausses (c'est le bloc "par défaut").
+#
+# Parfois il n'y a rien à faire. Dans ce cas, on peut omettre l'instruction `else` :
+#
+# !bc pycod-t
+# if expression 1:
+#     "bloc d'instructions 1"
+# elif expression 2:
+#     "bloc d'instructions 2"
+# elif expression 3:
+#     "bloc d'instructions 3"
+# # suite du programme
+# !ec
+#
+#
+# L'instruction `elif` évite souvent l'utilisation de conditions imbriquées (et souvent compliquées).
+#
+# === Exemple 3 : moyenne-bis ===
+# On peut tester plusieurs possibilités avec une syntaxe beaucoup plus propre avec les instructions `if-elif-else`:
+# !bc pycod
+# note = float(input("Note sur 20 : "))
+# if note == 0.0:
+#     print("C'est en dessous de la moyenne")
+#     print("... lamentable!")
+# elif note == 20.0:
+#     print("J'ai la moyenne")
+#     print("C'est même excellent !")
+# elif 0 < note < 10:    # ou bien : elif 0.0 < note < 10.0:
+#     print("C'est en dessous de la moyenne")
+# elif note >= 10.0 and note < 20.0:   # ou bien : elif 10.0 <= note < 20.0:
+#     print("J'ai la moyenne")
+# else:
+#     print("Note invalide !")
+# print("Fin du programme")
+# !ec
+#
+# !split
+# ===== Exercise: Condition sur le jour de travail =====
+#
+# Si aujourd'hui est lundi alors je dois aller travailler, mais si c'est dimanche alors je peux rester faire la grasse matinée. Pour pouvoir accomplir ce genre de choses en Python, on fait appel à des expressions booléennes qui ne peuvent revêtir que deux possibilités - ou bien l'expression est vraie ou bien elle est fausse - et à la syntaxe if condition: qui permet de contrôler le flux du programme grâce à ces valeurs booléennes.
+#
+# !bc pycod-t
+# day_week = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi",
+#             "Samedi", "Dimanche"]
+# today = input("Aujourd'hui est: ")
+#
+# if *condition vraie*:  # Quelle est la condition vraie dans ce cas?
+#     print("Je dors le matin!")
+# else:
+#     print("Je travail le matin!")
+#
+# print("Fin du programme")
+# !ec
+#
+# !bhint
+# Dans la _condition vraie_, utilisez l'opérateur logique `in` pour tester les éléments de la liste `day_week`.
+# !ehint
+#
+# !bsol
+# !bc pycod
+# day_week = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+# today = input("Aujourd'hui est: ")
+# if today in day_week:
+#     if today == day_week[-1]:  # la condition vraie
+#         print("Je dors le matin!")
+#     else:
+#         print("Je travail le matin!")
+#
+# print("Fin du programme")
+# !ec
+# !esol
 # ======= Les boucles =======
 # ===== L'instruction `while` =====
 #
