@@ -13,13 +13,13 @@ DATE: today
 !split
 ======= Documents =======
 !split
-===== Chapitre I : Introduction au langage de programmation Python =====
+===== Chapitre I : Les bases de la programmation avec Python =====
 # * Notebook:
 #   * "jupyter/ipython" : "https://astrax.github.io/FormationPythonHAP2019-2020/pub/cours0/cours0.ipynb"
 #   * "Les figures" : "https://astrax.github.io/FormationPythonHAP2019-2020/pub/cours0/ipynb-cours0-src.tar.gz"
 * HTML (simple) :
-  * Cours
+  * "Cours" : "https://codetunisia.github.io/HAP-Python/pub/cours1/cours1-bs.html"
   * TD
 * PDF :
-  * Cours
+  * "Cours" : "https://codetunisia.github.io/HAM-Python/pub/cours1/cours1.pdf"
   * TD
