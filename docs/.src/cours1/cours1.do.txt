@@ -1106,7 +1106,7 @@ Dans la cellule *code* (Ipython), la syntaxe permettant d'exécuter un script es
 chaine
 !ec
 
-La syntaxe permettant de charger le contunu d'un script dans dans une cellule code est `%load script.py`. Par exemple:
+La syntaxe permettant de charger le contenu d'un script dans dans une cellule code est `%load script.py`. Par exemple:
 
 !bc pycod
 # %load test.py
