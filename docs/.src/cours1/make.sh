@@ -77,23 +77,23 @@ pdflatex -shell-escape $name
 
 ## Microsoft word docx
 # --reference-doc twocolumns.docx
-system doconce format latex $name
-system doconce ptex2tex $name
-system doconce replace '\Verb!' '\verb!' ${name}.tex
-system pandoc -f latex -t docx -o ${name}.docx ${name}.tex
+# system doconce format latex $name
+# system doconce ptex2tex $name
+# system doconce replace '\Verb!' '\verb!' ${name}.tex
+# system pandoc -f latex -t docx -o ${name}.docx ${name}.tex
 
 rawgit="--html_raw_github_url=raw.github"
 ## deck
-html=${name}-deck
-system doconce format html $name --pygments_html_style=perldoc --keep_pygments_html_bg --html_links_in_new_window --html_output=$html $rawgit
-common_replacements $name.html
-system doconce slides_html $html deck --html_slide_theme=sandstone.default --copyright=everypage
-editfix $html.html
-
-html=${name}-reveal-beige
-system doconce format html $name --pygments_html_style=perldoc --keep_pygments_html_bg --html_links_in_new_window --html_output=$html $rawgit
-system doconce slides_html $html reveal --html_slide_theme=beige --copyright=titlepage
-editfix $html.html
+# html=${name}-deck
+# system doconce format html $name --pygments_html_style=perldoc --keep_pygments_html_bg --html_links_in_new_window --html_output=$html $rawgit
+# common_replacements $name.html
+# system doconce slides_html $html deck --html_slide_theme=sandstone.default --copyright=everypage
+# editfix $html.html
+#
+# html=${name}-reveal-beige
+# system doconce format html $name --pygments_html_style=perldoc --keep_pygments_html_bg --html_links_in_new_window --html_output=$html $rawgit
+# system doconce slides_html $html reveal --html_slide_theme=beige --copyright=titlepage
+# editfix $html.html
 
 
 # Plain HTML documents
@@ -104,7 +104,7 @@ editfix $html.html
 
 # HTML bootstrap
 html=${name}-bs
-system doconce format html $name --html_style=bootswatch_journal "--html_body_style=font-size:20px;line-height:1.5" --pygments_html_style=default --html_admon=bootstrap_panel --html_output=$html $options
+system doconce format html $name --html_style=bootswatch_journal "--html_body_style=font-size:20px;line-height:1.5" --pygments_html_style=default --html_admon=bootstrap_panel --html_output=$html $options $opt2
 common_replacements $html.html
 #system doconce split_html $html.html --pagination
 
