@@ -19,7 +19,8 @@ DATE: today
 #   * "Les figures" : "https://astrax.github.io/FormationPythonHAP2019-2020/pub/cours0/ipynb-cours0-src.tar.gz"
 * HTML (simple) :
   * "Cours" : "https://codetunisia.github.io/HAP-Python/pub/cours1/cours1-bs.html"
-  * TD
+
 * PDF :
   * "Cours" : "https://codetunisia.github.io/HAP-Python/pub/cours1/cours1.pdf"
-  * TD
+  * "TD1 (énoncé)" : "https://codetunisia.github.io/HAP-Python/pub/td1/td1.pdf"
+  * "TD1 (corrigé)" : "https://codetunisia.github.io/HAP-Python/pub/td1/td1_corr.pdf"
