@@ -1,0 +1,84 @@
+---
+author:
+- 'Ahmed Ammar - IPEST'
+title: 'TD 2 : Instructions itératives'
+---
+
+\vspace{2ex}{\huge \textsc{\@title}}
+\vspace{1ex}
+\
+
+------------------------------------------------------------------------
+
+\
+
+Exercice 1 : Calculer $\pi$ (boucle for) {#exercice-1-calculer-pi-boucle-for .unnumbered .unnumbered}
+========================================
+
+Tout au long de l'histoire, les grands esprits ont développé différents
+schémas de calcul pour le nombre $\pi$. Nous allons ici considérer deux
+de ces schémas, l'un de Leibniz (1646-1716) et l'autre d'Euler
+(1707-1783).\
+Le schéma de Leibniz peut être écrit
+$$\pi = 8\sum_{k=0}^{\infty}\frac{1}{(4k + 1)(4k + 3)} ,$$ tandis qu'une
+forme du schéma d'Euler peut apparaître comme
+$$\pi = \sqrt[]{6\sum_{k=1}^{\infty}\frac{1}{k^2}} .$$ Si seuls les N
+premiers termes de chaque somme sont utilisés comme approximation de
+$\pi$, chaque schéma modifié aura calculé $\pi$ avec une certaine
+erreur.\
+En utilisant des boucles `for` :
+
+-   Écrivez un programme qui prend N comme entrée de l'utilisateur et
+    calcule la valeur de $\pi$ avec les deux schémas. Exécutez le
+    programme avec N = 100
+
+-   Votre programme doit également imprimer l'erreur finale obtenue avec
+    les deux schémas, c'est-à-dire lorsque le nombre de termes est N.
+
+Exercice 2 : Calculer $\pi$ (boucle while) {#exercice-2-calculer-pi-boucle-while .unnumbered .unnumbered}
+==========================================
+
+Refaire l'**Exercice 1**, mais en utilisant des boucles `while` cette
+fois-ci.
+
+Exercice 3 : Aire du rectangle par rapport au cercle {#exercice-3-aire-du-rectangle-par-rapport-au-cercle .unnumbered .unnumbered}
+====================================================
+
+Considérons un cercle et un rectangle. Le cercle a un rayon $r = 10.6$.
+Le rectangle a des côtés $a$ et $b$, mais seul $a$ est connu à l'avance.
+Soit $a = 1.3$ et écrire un programme qui utilise une boucle `while`
+pour trouver le plus grand entier $b$ possible qui donne une aire de
+rectangle plus petite que l'aire du cercle, mais aussi proche que
+possible de celle-ci. Exécuter le programme et confirmer qu'il donne la
+bonne réponse (qui est $b = 271$).
+
+\clearpage
+Exercice 4 : Graphisme en console {#exercice-4-graphisme-en-console .unnumbered .unnumbered}
+=================================
+
+Dans cet exercice, nous utilisons des boucles `for` imbriquées.
+
+-   Écrire un programme Python qui dessine dans la console le triangle
+    suivant:
+
+    ``` {frame="leftline" framerule="1.5mm" rulecolor="\color{blue}"}
+    * 
+    * * 
+    * * * 
+    * * * * 
+    ```
+
+-   Écrire un programme Python qui dessine dans la console la pyramide
+    suivante:
+
+    ``` {frame="leftline" framerule="1.5mm" rulecolor="\color{blue}"}
+    * 
+    * * 
+    * * * 
+    * * * * 
+    * * * * * 
+    * * * * 
+    * * * 
+    * * 
+    * 
+    ```
