@@ -268,7 +268,7 @@ TD N°3 : Bibliothèques numpy et matplotlib
 
 % --- begin date ---
 \begin{center}
-Feb 11, 2020
+Nov 19, 2020
 \end{center}
 % --- end date ---
 
@@ -369,76 +369,50 @@ plt.show()
 
 % --- end solution of exercise ---
 
-\end{doconceexercise}
-% --- end exercise ---
 
-
-
-
-% --- begin exercise ---
-\begin{doconceexercise}
-\refstepcounter{doconceexercisecounter}
-
-\exercisesection{Exercise \thedoconceexercisecounter: Racines d’une équation du second degré}
-
-
-Dans l'"application de l'exercice 4 dans TD N°2, nous avons montré la représentation graphique d'une équation du second degré $f(x)=0.83x^2+3.8x+2.48$ ainsi que ses racines réelles:
-
-
-
-\vspace{6mm}
-
-% inline figure
-\centerline{\includegraphics[width=0.7\linewidth]{imgs/equation2deg.pdf}}
-
-\vspace{6mm}
-
-
-Reproduire ce graphique en utilisant la fonction \texttt{EqSecondDegree(a,b,c)} du script Python \texttt{racines.py} pour déterminer les valeurs des racines x1 et x2 de l’équation $f(x)$.
-
-
-% --- begin solution of exercise ---
-\paragraph{Solution.}
-Le programme qui reproduit la figure en utilisant la fonction \texttt{EqSecondDegree()}:
-
-\begin{cod}{cbg_gray}\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=2mm]{python}
-# Importation
-import numpy as np
-import matplotlib.pyplot as plt
-from racines import EqSecondDegree
-# NOTE: le module racines est le fichier racines.py
-# qu'on doit placer dans le répertoire de travail.
-
-def f(x):
-    return 0.83 * x**2 + 3.8 * x + 2.48
-x = np.linspace(-6, 1, 200)
-y = f(x)
-x1, x2 = EqSecondDegree(0.83, 3.8, 2.48)
-
-plt.figure(figsize=(7, 5), dpi=80)
-plt.plot(x, y, color="blue", linewidth=3, linestyle="-", alpha=.8)
-plt.scatter([x1,x2], [f(x1), f(x2)], 80, color='red')
-
-plt.annotate('x1= {:.2f}'.format(x1),
-             xy=(x1, f(x1)), xycoords='data',
-             xytext=(+10, +30), textcoords='offset points', fontsize=16,
-             arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2"))
-plt.annotate('x2= {:.2f}'.format(x2),
-             xy=(x2, f(x2)), xycoords='data',
-             xytext=(+40, +30), textcoords='offset points', fontsize=16,
-             arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2"))
-
-plt.suptitle("Racines d’une équation du second degré", fontweight= 'bold')
-plt.title(r"$f(x) = 0.83 * x^2 + 3.8 * x + 2.48$",fontsize=14, color = 'b')
-
-plt.grid()
-plt.show()
-\end{minted}
-\end{cod}
-\noindent
-
-% --- end solution of exercise ---
-
+% ===== Exercise: Racines d’une équation du second degré =====
+% Dans l'"application de l'exercice 4 dans TD N°2, nous avons montré la représentation graphique d'une équation du second degré $f(x)=0.83x^2+3.8x+2.48$ ainsi que ses racines réelles:
+% 
+% FIGURE:[imgs/equation2deg, width=500 frac=0.7]
+% Reproduire ce graphique en utilisant la fonction \texttt{EqSecondDegree(a,b,c)} du script Python \texttt{racines.py} pour déterminer les valeurs des racines x1 et x2 de l’équation $f(x)$.
+% 
+% !bsol
+% Le programme qui reproduit la figure en utilisant la fonction \texttt{EqSecondDegree()}:
+% 
+% !bc pycod
+% # Importation
+% import numpy as np
+% import matplotlib.pyplot as plt
+% from racines import EqSecondDegree
+% # NOTE: le module racines est le fichier racines.py
+% # qu'on doit placer dans le répertoire de travail.
+% 
+% def f(x):
+% return 0.83 * x**2 + 3.8 * x + 2.48
+% x = np.linspace(-6, 1, 200)
+% y = f(x)
+% x1, x2 = EqSecondDegree(0.83, 3.8, 2.48)
+% 
+% plt.figure(figsize=(7, 5), dpi=80)
+% plt.plot(x, y, color="blue", linewidth=3, linestyle="-", alpha=.8)
+% plt.scatter([x1,x2], [f(x1), f(x2)], 80, color='red')
+% 
+% plt.annotate('x1= {:.2f}'.format(x1),
+% xy=(x1, f(x1)), xycoords='data',
+% xytext=(+10, +30), textcoords='offset points', fontsize=16,
+% arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2"))
+% plt.annotate('x2= {:.2f}'.format(x2),
+% xy=(x2, f(x2)), xycoords='data',
+% xytext=(+40, +30), textcoords='offset points', fontsize=16,
+% arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2"))
+% 
+% plt.suptitle("Racines d’une équation du second degré", fontweight= 'bold')
+% plt.title(r"$f(x) = 0.83 * x^2 + 3.8 * x + 2.48$",fontsize=14, color = 'b')
+% 
+% plt.grid()
+% plt.show()
+% !ec
+% !esol
 \end{doconceexercise}
 % --- end exercise ---
 
