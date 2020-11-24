@@ -68,11 +68,15 @@ pdflatex -shell-escape $name
 system doconce format html $name --html_style=bootswatch_journal $options
 common_replacements $name.html
 
+
+# Jupyter notebook
+doconce format ipynb $name opt2
+
 # Publish
 dest=../../pub/$name
 if [ ! -d $dest ]; then
 mkdir $dest
 fi
-cp -r *.pdf *.html imgs scripts $dest
+cp -r *.pdf *.html *.ipynb imgs scripts $dest
 
 ./clean.sh
