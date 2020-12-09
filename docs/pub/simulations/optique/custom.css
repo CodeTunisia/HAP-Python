@@ -1,0 +1,147 @@
+
+<style>
+/*---------------------------------*/
+/* Notebook styling */
+
+
+
+body { background-color: #001a33 !important; }
+
+#notebook { 
+    background-color: #001a33 !important;
+    box-shadow: inset 20px 36px 20px -35px black !important;
+}
+
+#maintoolbar { padding-top: 1em; padding-bottom: 1em; }
+#header { border-color: #93a1a1 !important; }
+/*-----------------------------------*/
+
+div.cell { /* set cell width to about 80 chars */
+    
+    /*width: 1050px;*/
+}
+
+div #notebook { /* centre the content */
+    
+    background: #e2e8e9; /* white background for content */
+    /*width: 1100px;*/
+    margin: auto;
+    padding-left: 1em;
+}
+
+#notebook li { /* More space between bullet points */
+margin-top:0.8em;
+}
+
+/* draw border around running cells */
+div.cell.border-box-sizing.code_cell.running { 
+    border: 3px solid #111;
+}
+
+/* Put a solid color box around each cell and its output, visually linking them together */
+div.cell.code_cell {
+    background-color: #e4e6e7; 
+    border-radius: 10px; /* rounded borders */
+    padding: 1em;
+    margin-top: 1em;
+    font-size: 12pt;
+}
+/*-------------------*/
+/* Cell output */
+
+.rendered_html pre, .rendered_html code {
+    color: inherit !important;
+    background-color: #F7F7F7 !important;
+}
+div.output_area pre {
+    color: #6b7b7b !important;
+}
+.rendered_html table, .rendered_html td, .rendered_html th {
+    border: 2px solid #586e75 !important;
+}
+/*-------------------*/
+
+div.text_cell_render{
+    color: #001a33 !important;
+    font-family: 'Comic Sans MS', sans-serif;
+    line-height: 130%;
+    font-size: 13pt;
+    /*width:800px;*/
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* Formatting for header cells */
+.text_cell_render h1 {
+    font-family: "Blippo", fantasy;
+    text-align: center;
+    font-weight: 500;
+    font-size: 40pt;
+    line-height: 120%;
+    color: rgb(12,85,97);
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+    display: block;
+}
+.text_cell_render h2 {
+    font-family: "Stencil Std", fantasy;
+    font-weight: 500;
+    font-size: 28pt;
+    line-height: 100%;
+    color: rgb(12,85,97);
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+    display: block;
+}	
+
+.text_cell_render h3 {
+    font-family: "Stencil Std", fantasy;
+    font-weight: 500;
+    font-size: 24pt;
+    margin-top:12px;
+    margin-bottom: 3px;
+    font-style: italic;
+    color: rgb(137, 85, 6);
+    display: block;
+}
+
+.text_cell_render h4 {
+    font-family: "Luminari", fantasy;
+    font-weight: 200;
+    font-size: 20pt;
+    margin-top:12px;
+    margin-bottom: 3px;
+    font-style: italic;
+    color: rgb(0, 0, 0);
+    display: block;
+}
+
+.text_cell_render h5 {
+    font-family: '"Blippo", fantasy;
+    font-weight: 300;
+    font-size: 16pt;
+    color: rgb(12,85,97);
+    font-style: italic;
+    margin-bottom: .1em;
+    margin-top: 0.1em;
+    display: block;
+}
+
+.text_cell_render h6 {
+    font-family: '"Blippo", fantasy;
+    font-weight: 300;
+    font-size: 12pt;
+    color: rgb(12,85,97);
+    font-style: italic;
+    margin-bottom: .1em;
+    margin-top: 0.1em;
+    display: block;
+}
+
+.CodeMirror{
+        font-family: "DejaVu Sans Mono", monospace;
+        font-size: 100%;
+}
+
+</style>
