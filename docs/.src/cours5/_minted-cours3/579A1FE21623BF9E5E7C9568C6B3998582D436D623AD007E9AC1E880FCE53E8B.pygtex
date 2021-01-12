@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k}{def} \PYG{n+nf}{radioactvite} \PYG{p}{(}\PYG{n}{N0} \PYG{p}{,} \PYG{n}{tmax} \PYG{p}{,} \PYG{n}{delta\PYGZus{}t} \PYG{p}{,} \PYG{n}{Lambda} \PYG{p}{)} \PYG{p}{:}
+    \PYG{c+c1}{\PYGZsh{}Le code de la fonction qui crée deux listes liste\PYGZus{}t et liste\PYGZus{}N}
+    \PYG{c+c1}{\PYGZsh{}...}
+    \PYG{k}{return} \PYG{n}{liste\PYGZus{}t}\PYG{p}{,} \PYG{n}{liste\PYGZus{}N}
+
+\PYG{n}{l\PYGZus{}t} \PYG{p}{,} \PYG{n}{l\PYGZus{}N} \PYG{o}{=} \PYG{n}{radioactivite}\PYG{p}{(}\PYG{n}{N0} \PYG{p}{,} \PYG{n}{tmax} \PYG{p}{,} \PYG{n}{delta\PYGZus{}t} \PYG{p}{,} \PYG{n}{Lambda}\PYG{p}{)}
+\end{Verbatim}
