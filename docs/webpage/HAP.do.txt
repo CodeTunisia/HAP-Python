@@ -27,4 +27,4 @@ DATE: today
 ======= Simulations =======
   * "Optique" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/simulations/optique/motivation.ipynb#scrollTo=Gxiqjib0MATb&line=12&uniqifier=1"
   * "Diagramme de rayonnement" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/simulations/antenne/antenne.ipynb#scrollTo=87sOiygLfDxE"
-  * "Solution numérique de l'équation de Schrödinger dépendant du temps pour un potentiel arbitraire (Programmation Orientée Objet )" : "https://www.google.com/search?channel=fs&client=ubuntu&q=orient%C3%A9e+objet+concours+informatique"
+  * "Solution numérique de l'équation de Schrödinger dépendant du temps pour un potentiel arbitraire (Programmation Orientée Objet )" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/simulations/Schrodinger.ipynb"
