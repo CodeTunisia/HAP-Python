@@ -11,18 +11,20 @@ Si vous constatez des erreurs signalez-les simplement aux auteurs:
 DATE: today
 
 !split
-======= Documents =======
-!split
-===== Chapitre I : Les bases de la programmation avec Python =====
-# * Notebook:
-#   * "jupyter/ipython" : "https://astrax.github.io/FormationPythonHAP2019-2020/pub/cours0/cours0.ipynb"
-#   * "Les figures" : "https://astrax.github.io/FormationPythonHAP2019-2020/pub/cours0/ipynb-cours0-src.tar.gz"
-* HTML (simple) :
-  * "Cours" : "https://codetunisia.github.io/HAP-Python/pub/cours1/cours1-bs.html"
+======= Programmation et algorithmique =======
+* "Les bases de la programmation avec Python" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/cours1/cours1.ipynb"
+* "Instructions itératives" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/td2/td2.ipynb#scrollTo=3T28jFr4fQPp"
+* "numpy et matplotlib (cours)" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/cours2/cours2.ipynb"
+* "numpy et matplotlib (exercices)" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/TD3/TD3.ipynb"
 
-* PDF :
-  * "Cours" : "https://codetunisia.github.io/HAP-Python/pub/cours1/cours1.pdf"
-  * "TD1 (énoncé)" : "https://codetunisia.github.io/HAP-Python/pub/td1/td1.pdf"
-  * "TD1 (corrigé)" : "https://codetunisia.github.io/HAP-Python/pub/td1/td1_corr.pdf"
-* Simulations
+!split
+======= Méthodes numériques pour la physique =======
+* "Équations différentielles ordinaires (I)" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/cours3/cours3.ipynb"
+* "Équations différentielles ordinaires (II)" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/cours3/ODE1.ipynb"
+* "Équations différentielles ordinaires (III)" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/TP_RK4/TPRK4_AttracteurLorenz.ipynb"
+
+!split
+======= Simulations =======
   * "Optique" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/simulations/optique/motivation.ipynb#scrollTo=Gxiqjib0MATb&line=12&uniqifier=1"
+  * "Diagramme de rayonnement" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/simulations/antenne/antenne.ipynb#scrollTo=87sOiygLfDxE"
+  * "Solution numérique de l'équation de Schrödinger dépendant du temps pour un potentiel arbitraire (Programmation Orientée Objet )" : "https://www.google.com/search?channel=fs&client=ubuntu&q=orient%C3%A9e+objet+concours+informatique"
