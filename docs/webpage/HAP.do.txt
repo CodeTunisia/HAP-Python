@@ -24,3 +24,5 @@ DATE: today
   * "Cours" : "https://codetunisia.github.io/HAP-Python/pub/cours1/cours1.pdf"
   * "TD1 (énoncé)" : "https://codetunisia.github.io/HAP-Python/pub/td1/td1.pdf"
   * "TD1 (corrigé)" : "https://codetunisia.github.io/HAP-Python/pub/td1/td1_corr.pdf"
+* Simulations
+  * "Optique" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/simulations/optique/motivation.ipynb#scrollTo=Gxiqjib0MATb&line=12&uniqifier=1"
