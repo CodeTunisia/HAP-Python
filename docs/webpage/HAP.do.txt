@@ -24,7 +24,9 @@ DATE: today
 * "Équations différentielles ordinaires (III)" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/TP_RK4/TPRK4_AttracteurLorenz.ipynb"
 
 * "Intégration numérique (cours)" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/.src/cours4/cours4.ipynb"
-* "Intégration numérique (exercices)" : ""
+* "Intégration numérique (exercices)" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/.src/cours4/TD4.ipynb"
+
+
 !split
 ======= Simulations =======
   * "Optique" : "https://colab.research.google.com/github/CodeTunisia/HAP-Python/blob/master/docs/pub/simulations/optique/motivation.ipynb#scrollTo=Gxiqjib0MATb&line=12&uniqifier=1"
