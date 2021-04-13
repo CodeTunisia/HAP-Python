@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n}{h} \PYG{o}{=} \PYG{l+m+mi}{10}
+\PYG{n}{I} \PYG{o}{=} \PYG{l+m+mf}{0.5} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mi}{30} \PYG{o}{+} \PYG{l+m+mf}{50.67}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} 1/2 * [f(x0) + f(xn)]}
+\PYG{n}{fx} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{31.63}\PYG{p}{,}\PYG{l+m+mf}{33.44}\PYG{p}{,}\PYG{l+m+mf}{35.47}\PYG{p}{,}\PYG{l+m+mf}{37.75}\PYG{p}{,}\PYG{l+m+mf}{40.33}\PYG{p}{,}\PYG{l+m+mf}{43.29}\PYG{p}{,}\PYG{l+m+mf}{46.70}\PYG{p}{]} \PYG{c+c1}{\PYGZsh{} f(x1) \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} f(xn\PYGZhy{}1)}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{fx}\PYG{p}{)):}
+    \PYG{n}{I}\PYG{o}{+=} \PYG{n}{fx}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+\PYG{n}{I}\PYG{o}{*=}\PYG{n}{h}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{I}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}ms\PYGZca{}\PYGZhy{}1\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

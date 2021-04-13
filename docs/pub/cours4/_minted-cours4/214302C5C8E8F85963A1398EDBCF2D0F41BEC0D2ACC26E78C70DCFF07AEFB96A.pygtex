@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+PI numpy       :  3.141592653589793
+PI monte carlo :  3.1436
+différence     :  0.002007346410207056
+\end{Verbatim}

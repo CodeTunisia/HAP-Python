@@ -1,0 +1,102 @@
+translating doconce text in cours4.do.txt to pdflatex
+open file with encoding utf-8
+
+*** warning: found \label{...} with backslash
+    (label{...} has no backslash in DocOnce syntax)
+\label{eq:MidpointDouble}
+\label{eq:midpointTriple}
+copying from regex "## NOM" until "def application()"
+     file: scripts/trapeze_integral.py, lines 1-11 (format: pycod)
+copying from regex "def application" until "if"
+     file: scripts/trapeze_integral.py, lines 11-24 (format: pycod)
+copying from regex "if" until end of file
+     file: scripts/trapeze_integral.py, lines 24-25 (format: pycod)
+copying from regex "## NOM" until "def application()"
+     file: scripts/midpoint_integral.py, lines 1-11 (format: pycod)
+copy complete file scripts/compare_integration_methods.py (format: pypro)
+copy complete file scripts/MC_integral.py (format: pypro)
+figure file imgs/MC_integral:
+    can use imgs/MC_integral.pdf for format pdflatex
+figure file imgs/viz_trapezoidal:
+    can use imgs/viz_trapezoidal.pdf for format pdflatex
+figure file imgs/integral_of_f:
+    can use imgs/integral_of_f.pdf for format pdflatex
+figure file imgs/viz_midpoint:
+    can use imgs/viz_midpoint.pdf for format pdflatex
+*** warning: !bc ipy used for IPython sessions, but
+    ipython is not supported for syntax highlighting!
+    install:
+    git clone https://hplbit@bitbucket.org/hplbit/pygments-ipython-console.git; cd pygments-ipython-console; sudo python setup.py install
+no lexer for alias 'ipy' found
+Warning: found "!bc pycodext", but pycodext is not a standard predefined code environment
+
+...doconce translation: insertion of verbatim and latex blocks 57.2 s (accumulated time: 57.9)
+*** made directory latex_figs for admon figures
+
+
+...doconce format used 59.5 s to translate the document (1019 lines)
+
+output in cours4.tex
+translating doconce text in cours4.do.txt to html
+open file with encoding utf-8
+
+*** warning: found \label{...} with backslash
+    (label{...} has no backslash in DocOnce syntax)
+\label{eq:MidpointDouble}
+\label{eq:midpointTriple}
+copying from regex "## NOM" until "def application()"
+     file: scripts/trapeze_integral.py, lines 1-11 (format: pycod)
+copying from regex "def application" until "if"
+     file: scripts/trapeze_integral.py, lines 11-24 (format: pycod)
+copying from regex "if" until end of file
+     file: scripts/trapeze_integral.py, lines 24-25 (format: pycod)
+copying from regex "## NOM" until "def application()"
+     file: scripts/midpoint_integral.py, lines 1-11 (format: pycod)
+copy complete file scripts/compare_integration_methods.py (format: pypro)
+copy complete file scripts/MC_integral.py (format: pypro)
+figure file imgs/integral_of_f:
+    can use imgs/integral_of_f.png for format html
+figure file imgs/MC_integral:
+    can use imgs/MC_integral.png for format html
+figure file imgs/viz_midpoint:
+    can use imgs/viz_midpoint.png for format html
+figure file imgs/viz_trapezoidal:
+    can use imgs/viz_trapezoidal.png for format html
+*** warning: !bc ipy used for IPython sessions, but
+    ipython is not supported for syntax highlighting!
+    install:
+    git clone https://hplbit@bitbucket.org/hplbit/pygments-ipython-console.git; cd pygments-ipython-console; sudo python setup.py install
+no lexer for alias 'ipy' found
+
+...doconce translation: insertion of verbatim and latex blocks 67.1 s (accumulated time: 68.2)
+
+
+...doconce format used 69.2 s to translate the document (963 lines)
+
+output in cours4-bs.html
+translating doconce text in cours4.do.txt to ipynb
+
+*** warning: found \label{...} with backslash
+    (label{...} has no backslash in DocOnce syntax)
+\label{eq:MidpointDouble}
+\label{eq:midpointTriple}
+copying from regex "## NOM" until "def application()"
+     file: scripts/trapeze_integral.py, lines 1-11 (format: pycod)
+copying from regex "def application" until "if"
+     file: scripts/trapeze_integral.py, lines 11-24 (format: pycod)
+copying from regex "if" until end of file
+     file: scripts/trapeze_integral.py, lines 24-25 (format: pycod)
+copying from regex "## NOM" until "def application()"
+     file: scripts/midpoint_integral.py, lines 1-11 (format: pycod)
+copy complete file scripts/compare_integration_methods.py (format: pypro)
+copy complete file scripts/MC_integral.py (format: pypro)
+figure file imgs/integral_of_f:
+    can use imgs/integral_of_f.png for format ipynb
+figure file imgs/viz_trapezoidal:
+    can use imgs/viz_trapezoidal.png for format ipynb
+figure file imgs/viz_midpoint:
+    can use imgs/viz_midpoint.png for format ipynb
+figure file imgs/MC_integral:
+    can use imgs/MC_integral.png for format ipynb
+collected all required additional files in ipynb-cours4-src.tar.gz which must be distributed with the notebook
+output in cours4.ipynb

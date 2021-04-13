@@ -1,0 +1,14 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Id\351es de base de l'int\351gration num\351rique}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Exemple de calcul}{section.2}% 3
+\BOOKMARK [1][-]{section.3}{La r\350gle du trap\350ze composite}{}% 4
+\BOOKMARK [2][-]{subsection.3.1}{La formule g\351n\351rale}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.2}{Impl\351mentation}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{La m\351thode du point milieu composite}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{L'id\351e}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{La formule g\351n\351rale}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.3}{Impl\351mentation}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.4}{Comparaison des m\351thodes du trap\350ze et du point milieu}{section.4}% 11
+\BOOKMARK [1][-]{section.5}{Int\351gration Monte Carlo}{}% 12
+\BOOKMARK [2][-]{subsection.5.1}{Exemple: d\351termination de }{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.2}{impl\351mentation}{section.5}% 14

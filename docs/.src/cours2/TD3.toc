@@ -1,0 +1,12 @@
+\contentsline {paragraph}{a)}{2}{section*.5}
+\contentsline {paragraph}{b)}{2}{section*.6}
+\contentsline {paragraph}{c)}{2}{section*.7}
+\contentsline {paragraph}{d)}{2}{section*.8}
+\contentsline {paragraph}{e)}{2}{section*.9}
+\contentsline {paragraph}{f)}{2}{section*.10}
+\contentsline {paragraph}{a)}{4}{section*.12}
+\contentsline {paragraph}{b)}{4}{section*.13}
+\contentsline {paragraph}{c)}{4}{section*.14}
+\contentsline {paragraph}{d)}{4}{section*.15}
+\contentsline {paragraph}{e)}{4}{section*.16}
+\contentsline {paragraph}{f)}{4}{section*.17}

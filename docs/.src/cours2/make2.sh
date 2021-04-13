@@ -79,4 +79,4 @@ mkdir $dest
 fi
 cp -r *.pdf *.html *.ipynb imgs scripts $dest
 
-./clean.sh
+#./clean.sh

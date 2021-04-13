@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} NOM DU PROGRAMME: compare\PYGZus{}integration\PYGZus{}methods.py}
+\PYG{c+c1}{\PYGZsh{}\PYGZpc{} IMPORTATION}
+\PYG{k+kn}{from} \PYG{n+nn}{trapeze\PYGZus{}integral} \PYG{k+kn}{import} \PYG{n}{trapeze}
+\PYG{k+kn}{from} \PYG{n+nn}{midpoint\PYGZus{}integral} \PYG{k+kn}{import} \PYG{n}{midpoint}
+\PYG{k+kn}{from} \PYG{n+nn}{math} \PYG{k+kn}{import} \PYG{n}{exp}
+
+\PYG{n}{g} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{y}\PYG{p}{:} \PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{y}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{a} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{n}{b} \PYG{o}{=} \PYG{l+m+mi}{2}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}      n      point milieu     trapèze\PYGZdq{}}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{21}\PYG{p}{):}
+    \PYG{n}{n} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{o}{**}\PYG{n}{i}
+    \PYG{n}{m} \PYG{o}{=} \PYG{n}{midpoint}\PYG{p}{(}\PYG{n}{g}\PYG{p}{,} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+    \PYG{n}{t} \PYG{o}{=} \PYG{n}{trapeze}\PYG{p}{(}\PYG{n}{g}\PYG{p}{,} \PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZpc{}7d}\PYG{l+s+s1}{ }\PYG{l+s+si}{\PYGZpc{}.16f}\PYG{l+s+s1}{ }\PYG{l+s+si}{\PYGZpc{}.16f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{m}\PYG{p}{,} \PYG{n}{t}\PYG{p}{))}
+\end{Verbatim}

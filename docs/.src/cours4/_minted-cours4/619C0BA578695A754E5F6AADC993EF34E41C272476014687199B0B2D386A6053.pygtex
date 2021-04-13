@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{k}{def} \PYG{n+nf}{application}\PYG{p}{():}
+    \PYG{k+kn}{from} \PYG{n+nn}{math} \PYG{k+kn}{import} \PYG{n}{exp}
+    \PYG{n}{v} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{t}\PYG{p}{:} \PYG{l+m+mi}{3}\PYG{o}{*}\PYG{p}{(}\PYG{n}{t}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{*}\PYG{n}{exp}\PYG{p}{(}\PYG{n}{t}\PYG{o}{**}\PYG{l+m+mi}{3}\PYG{p}{)}
+    \PYG{n}{n} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}n: \PYGZsq{}}\PYG{p}{))}
+    \PYG{n}{numerical} \PYG{o}{=} \PYG{n}{trapeze}\PYG{p}{(}\PYG{n}{v}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} Comparer avec le résultat exact}
+    \PYG{n}{V} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{t}\PYG{p}{:} \PYG{n}{exp}\PYG{p}{(}\PYG{n}{t}\PYG{o}{**}\PYG{l+m+mi}{3}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}
+    \PYG{n}{exact} \PYG{o}{=} \PYG{n}{V}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{V}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{exact}\PYG{p}{)}
+    \PYG{n}{error} \PYG{o}{=} \PYG{n}{exact} \PYG{o}{\PYGZhy{}} \PYG{n}{numerical}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}n=}\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s1}{: }\PYG{l+s+si}{\PYGZpc{}.16f}\PYG{l+s+s1}{, erreur: }\PYG{l+s+si}{\PYGZpc{}g}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{\PYGZpc{}} \PYG{p}{(}\PYG{n}{n}\PYG{p}{,} \PYG{n}{numerical}\PYG{p}{,} \PYG{n}{error}\PYG{p}{))}
+\end{Verbatim}

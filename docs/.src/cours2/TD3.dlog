@@ -1,0 +1,108 @@
+translating doconce text in TD3.do.txt to pdflatex
+open file with encoding utf-8
+
+*** Exercise: Tracer une fonction
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Tracer deux fonctions
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Approximer une fonction par une somme de sinus
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Fonctions spéciales (intégrales de Fresnel et spirale de Cornu)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 4 exercises
+figure file imgs/fourier:
+    can use imgs/fourier.pdf for format pdflatex
+figure file imgs/fresnel:
+    can use imgs/fresnel.png for format pdflatex
+output in TD3.tex
+translating doconce text in TD3.do.txt to pdflatex
+open file with encoding utf-8
+
+*** Exercise: Tracer une fonction
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Tracer deux fonctions
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Approximer une fonction par une somme de sinus
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Fonctions spéciales (intégrales de Fresnel et spirale de Cornu)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 4 exercises
+figure file imgs/fourier:
+    can use imgs/fourier.pdf for format pdflatex
+figure file imgs/fresnel:
+    can use imgs/fresnel.png for format pdflatex
+output in TD3.tex
+translating doconce text in TD3.do.txt to html
+open file with encoding utf-8
+
+*** Exercise: Tracer une fonction
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Tracer deux fonctions
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Approximer une fonction par une somme de sinus
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Fonctions spéciales (intégrales de Fresnel et spirale de Cornu)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 4 exercises
+figure file imgs/fourier:
+    can use imgs/fourier.png for format html
+figure file imgs/fresnel:
+    can use imgs/fresnel.png for format html
+output in TD3.html
+translating doconce text in TD3.do.txt to ipynb
+
+*** Exercise: Tracer une fonction
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Tracer deux fonctions
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Approximer une fonction par une somme de sinus
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Fonctions spéciales (intégrales de Fresnel et spirale de Cornu)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 4 exercises
+figure file imgs/fourier:
+    can use imgs/fourier.png for format ipynb
+figure file imgs/fresnel:
+    can use imgs/fresnel.png for format ipynb
+collected all required additional files in ipynb-TD3-src.tar.gz which must be distributed with the notebook
+*** warning: latex envir \begin{aligned} does not work well in Markdown.
+    Stick to \[ ... \], equation, equation*, align, or align*
+    environments in math environments.
+
+*** warning: latex envir \begin{aligned} does not work well in Markdown.
+    Stick to \[ ... \], equation, equation*, align, or align*
+    environments in math environments.
+
+*** warning: latex envir \begin{aligned} does not work well in Markdown.
+    Stick to \[ ... \], equation, equation*, align, or align*
+    environments in math environments.
+
+output in TD3.ipynb

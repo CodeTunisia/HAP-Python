@@ -1,0 +1,19 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}Id\IeC {\'e}es de base de l'int\IeC {\'e}gration num\IeC {\'e}rique}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Exemple de calcul}{2}{subsection.2.1}
+\contentsline {section}{\numberline {3}La r\IeC {\`e}gle du trap\IeC {\`e}ze composite}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}La formule g\IeC {\'e}n\IeC {\'e}rale}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Impl\IeC {\'e}mentation}{6}{subsection.3.2}
+\contentsline {paragraph}{Impl\IeC {\'e}mentation sp\IeC {\'e}cifique ou g\IeC {\'e}n\IeC {\'e}rale?}{6}{section*.2}
+\contentsline {paragraph}{Impl\IeC {\'e}mentation avec fonctions.}{6}{section*.3}
+\contentsline {paragraph}{R\IeC {\'e}soudre notre probl\IeC {\`e}me sp\IeC {\'e}cifique en une session.}{7}{section*.4}
+\contentsline {paragraph}{R\IeC {\'e}soudre notre probl\IeC {\`e}me sp\IeC {\'e}cifique dans un programme.}{7}{section*.5}
+\contentsline {paragraph}{Faire un module.}{8}{section*.6}
+\contentsline {section}{\numberline {4}La m\IeC {\'e}thode du point milieu composite}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}L'id\IeC {\'e}e}{8}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}La formule g\IeC {\'e}n\IeC {\'e}rale}{9}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Impl\IeC {\'e}mentation}{10}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Comparaison des m\IeC {\'e}thodes du trap\IeC {\`e}ze et du point milieu}{10}{subsection.4.4}
+\contentsline {section}{\numberline {5}Int\IeC {\'e}gration Monte Carlo}{11}{section.5}
+\contentsline {subsection}{\numberline {5.1}Exemple: d\IeC {\'e}termination de $\pi $}{12}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}impl\IeC {\'e}mentation}{13}{subsection.5.2}

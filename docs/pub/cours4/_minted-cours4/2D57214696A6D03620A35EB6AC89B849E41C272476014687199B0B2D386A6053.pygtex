@@ -1,0 +1,39 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} NOM DU PROGRAMME: MC\PYGZus{}integral.py}
+\PYG{c+c1}{\PYGZsh{}\PYGZpc{} IMPORTATION}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+
+\PYG{k}{def} \PYG{n+nf}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZsq{}\PYGZsq{}\PYGZsq{}}
+\PYG{l+s+sd}{    fonction pour un cercle}
+\PYG{l+s+sd}{    \PYGZsq{}\PYGZsq{}\PYGZsq{}}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{o}{*}\PYG{n}{x}\PYG{p}{)}
+
+\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{10000}   \PYG{c+c1}{\PYGZsh{} nombre d\PYGZsq{}essais}
+\PYG{n}{x0} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{n}{x1} \PYG{o}{=} \PYG{l+m+mi}{1}
+
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{,} \PYG{n}{x1}\PYG{p}{,} \PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{n}{y} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{fmax} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{y}\PYG{p}{)}
+\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{seed}\PYG{p}{(}\PYG{l+m+mi}{6}\PYG{p}{)}
+\PYG{n}{x\PYGZus{}rand} \PYG{o}{=} \PYG{n}{x0} \PYG{o}{+} \PYG{p}{(}\PYG{n}{x1} \PYG{o}{\PYGZhy{}} \PYG{n}{x0}\PYG{p}{)} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
+\PYG{n}{y\PYGZus{}rand} \PYG{o}{=} \PYG{n}{fmax} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{rand}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
+\PYG{n}{n} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{(}\PYG{n}{y\PYGZus{}rand} \PYG{o}{\PYGZhy{}} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x\PYGZus{}rand}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mf}{0.0}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} nombre de points dans le cercle}
+\PYG{c+c1}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} Sortie et graphiques \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}PI numpy       : \PYGZsq{}}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{pi}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}PI monte carlo : \PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{n}\PYG{o}{/}\PYG{n}{N}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}différence     : \PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{o}{*}\PYG{n}{n}\PYG{o}{/}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{np}\PYG{o}{.}\PYG{n}{pi}\PYG{p}{)}
+
+\PYG{n}{index\PYGZus{}below} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{n}{y\PYGZus{}rand} \PYG{o}{\PYGZlt{}} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x\PYGZus{}rand}\PYG{p}{))}
+\PYG{n}{index\PYGZus{}above} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{n}{y\PYGZus{}rand} \PYG{o}{\PYGZgt{}=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x\PYGZus{}rand}\PYG{p}{))}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{p}{,}\PYG{l+m+mi}{7}\PYG{p}{))}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{),}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}k\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{x\PYGZus{}rand}\PYG{p}{[}\PYG{n}{index\PYGZus{}below}\PYG{p}{],} \PYG{n}{y\PYGZus{}rand}\PYG{p}{[}\PYG{n}{index\PYGZus{}below}\PYG{p}{],}
+            \PYG{n}{c}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}r\PYGZdq{}}\PYG{p}{,} \PYG{n}{s} \PYG{o}{=} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{n}{label} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Pts sous la courbe\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{x\PYGZus{}rand}\PYG{p}{[}\PYG{n}{index\PYGZus{}above}\PYG{p}{],} \PYG{n}{y\PYGZus{}rand}\PYG{p}{[}\PYG{n}{index\PYGZus{}above}\PYG{p}{],}
+            \PYG{n}{c}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}b\PYGZdq{}}\PYG{p}{,} \PYG{n}{s} \PYG{o}{=} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{n}{label} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Pts au\PYGZhy{}dessus de la courbe\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{n}{bbox\PYGZus{}to\PYGZus{}anchor}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mf}{0.}\PYG{p}{,} \PYG{l+m+mf}{1.02}\PYG{p}{,} \PYG{l+m+mf}{1.}\PYG{p}{,} \PYG{o}{.}\PYG{l+m+mi}{102}\PYG{p}{),} \PYG{n}{ncol}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{()}
+\end{Verbatim}

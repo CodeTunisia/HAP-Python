@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+Terminal\PYGZgt{} python trapeze\PYGZus{}integral.py
+n: 400
+n=400: 1.7183030649495579, error: \PYGZhy{}2.12365e\PYGZhy{}05
+\end{Verbatim}

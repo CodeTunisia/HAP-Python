@@ -1,0 +1,74 @@
+translating doconce text in TD4.do.txt to pdflatex
+open file with encoding utf-8
+copy complete file scripts/OrbitalesAtomiques.py (format: pypro)
+
+*** Exercise: Vitesse d'une fusée
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Orbitales atomiques
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 2 exercises
+figure file imgs/densite_radiale:
+    can use imgs/densite_radiale.pdf for format pdflatex
+figure file imgs/SpaceX-Starship:
+    can use imgs/SpaceX-Starship.jpg for format pdflatex
+
+...doconce translation: insertion of verbatim and latex blocks 41.6 s (accumulated time: 41.8)
+
+
+...doconce format used 43.3 s to translate the document (710 lines)
+
+output in TD4.tex
+translating doconce text in TD4.do.txt to pdflatex
+open file with encoding utf-8
+copy complete file scripts/OrbitalesAtomiques.py (format: pypro)
+
+*** Exercise: Vitesse d'une fusée
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Orbitales atomiques
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 2 exercises
+figure file imgs/SpaceX-Starship:
+    can use imgs/SpaceX-Starship.jpg for format pdflatex
+figure file imgs/densite_radiale:
+    can use imgs/densite_radiale.pdf for format pdflatex
+output in TD4.tex
+translating doconce text in TD4.do.txt to html
+open file with encoding utf-8
+copy complete file scripts/OrbitalesAtomiques.py (format: pypro)
+
+*** Exercise: Vitesse d'une fusée
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Orbitales atomiques
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 2 exercises
+figure file imgs/densite_radiale:
+    can use imgs/densite_radiale.png for format html
+figure file imgs/SpaceX-Starship:
+    can use imgs/SpaceX-Starship.jpg for format html
+output in TD4.html
+translating doconce text in TD4.do.txt to ipynb
+copy complete file scripts/OrbitalesAtomiques.py (format: pypro)
+
+*** Exercise: Vitesse d'une fusée
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+
+*** Exercise: Orbitales atomiques
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 2 exercises
+figure file imgs/SpaceX-Starship:
+    can use imgs/SpaceX-Starship.jpg for format ipynb
+figure file imgs/densite_radiale:
+    can use imgs/densite_radiale.png for format ipynb
+collected all required additional files in ipynb-TD4-src.tar.gz which must be distributed with the notebook
+output in TD4.ipynb

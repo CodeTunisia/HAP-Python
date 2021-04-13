@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n}{CF} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{C}\PYG{p}{(}\PYG{n}{x}\PYG{p}{));} \PYG{n}{SF} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{S}\PYG{p}{(}\PYG{n}{x}\PYG{p}{))}
+\end{Verbatim}

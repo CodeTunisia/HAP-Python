@@ -1,0 +1,489 @@
+
+# Information about all exercises in the file TD3.do.txt.
+# The information can be loaded into a Python list of dicts by
+#
+# f = open('.TD3.exerinfo', 'r')
+# exer = eval(f.read())
+#
+[{'answer': '',
+  'chapter_exercise': None,
+  'chapter_no': None,
+  'chapter_title': None,
+  'chapter_type': None,
+  'closing_remarks': '',
+  'file': None,
+  'heading': '=====',
+  'hints': [],
+  'keywords': None,
+  'label': None,
+  'no': 1,
+  'solution': 'La programme qui trace la fonction $g(y)$ est:\n'
+              '!bc pyscpro\n'
+              '# Importation\n'
+              'import numpy as np\n'
+              'import matplotlib.pyplot as plt\n'
+              '\n'
+              'def g(y):\n'
+              '    return np.exp(-y)*np.sin(4*y)\n'
+              '\n'
+              'y = np.linspace(0, 4, 501)\n'
+              '# définir un nouveau graphique\n'
+              'plt.figure()\n'
+              '# tracer la fonction g(y) avec ligne solide rouge\n'
+              "plt.plot(y, g(y), 'r-')\n"
+              "plt.xlabel('y'); plt.ylabel('g(y)')\n"
+              "plt.title(u'Onde sinusoïdale atténuée')\n"
+              ' # sauvgarder le grahique (format PNG et PDF)\n'
+              'plt.savefig("fig_ex1.png"); plt.savefig("fig_ex1.pdf")\n'
+              '# Afficher le graphique\n'
+              'plt.show()\n'
+              '\n'
+              '!ec',
+  'solution_file': None,
+  'subex': [],
+  'text': 'Ecrivez un programme qui trace la fonction $g(y) = e^{-y} sin(4y)$ '
+          'pour $y \\in [0, 4]$ en utilisant une ligne continue rouge. '
+          'Utilisez 500 intervalles pour évaluer les points dans [0,4]. '
+          'Stockez toutes les coordonnées et les valeurs dans des tableaux. '
+          'Placez le texte des graduations sur les axes et utilisez le titre '
+          '"Onde sinusoïdale atténuée".',
+  'title': 'Tracer une fonction',
+  'type': 'Exercise',
+  'type_visible': True},
+ {'answer': '',
+  'chapter_exercise': None,
+  'chapter_no': None,
+  'chapter_title': None,
+  'chapter_type': None,
+  'closing_remarks': '',
+  'file': None,
+  'heading': '=====',
+  'hints': [],
+  'keywords': None,
+  'label': None,
+  'no': 2,
+  'solution': 'La programme qui trace la fonction $g(y)$ avec une nouvelle '
+              'fonction $h(y)$ est:\n'
+              '!bc pyscpro\n'
+              '# Importation\n'
+              'import numpy as np\n'
+              'import matplotlib.pyplot as plt\n'
+              '\n'
+              'def g(y):\n'
+              '    return np.exp(-y)*np.sin(4*y)\n'
+              '\n'
+              'def h(y):\n'
+              '    return np.exp(-(3./2)*y)*np.sin(4*y)\n'
+              '\n'
+              'y = np.linspace(0, 4, 501)\n'
+              'plt.figure()\n'
+              "plt.plot(y, g(y), 'r-', y, h(y), 'k--')\n"
+              "plt.xlabel('y'); plt.ylabel('g(y)')\n"
+              "plt.title(u'Onde sinusoïdale atténuée')\n"
+              "plt.legend(['g', 'h'])\n"
+              '\n'
+              'plt.savefig("fig_ex2.png"); plt.savefig("fig_ex2.pdf")\n'
+              'plt.show()\n'
+              '\n'
+              '!ec',
+  'solution_file': None,
+  'subex': [],
+  'text': 'Comme Exercice 1, mais ajouter une courbe en pointillé noir pour la '
+          'fonction $h(y) = e^{-\\frac{3}{2}y} sin(4y)$. Inclure une légende '
+          'pour chaque courbe (avec les noms $g$ et $h$).',
+  'title': 'Tracer deux fonctions',
+  'type': 'Exercise',
+  'type_visible': True},
+ {'answer': '',
+  'chapter_exercise': None,
+  'chapter_no': None,
+  'chapter_title': None,
+  'chapter_type': None,
+  'closing_remarks': '',
+  'file': None,
+  'heading': '=====',
+  'hints': [],
+  'keywords': None,
+  'label': None,
+  'no': 3,
+  'solution': '',
+  'solution_file': None,
+  'subex': [{'answer': '',
+             'file': None,
+             'hints': [],
+             'solution': 'La fonction Python `S(t, n, T)` est la suivante:\n'
+                         '!bc pycod\n'
+                         'import numpy as np\n'
+                         'import matplotlib.pyplot as plt\n'
+                         'def S(t, n, T):\n'
+                         '    s = 0\n'
+                         '    for i in range(1, n+1):\n'
+                         '        A = 1/(2*i - 1)\n'
+                         '        B = 2*(2*i - 1)* (pi * t)\n'
+                         '        s +=  A * np.sin(B/T)\n'
+                         '\n'
+                         '    return s*4/np.pi\n'
+                         '\n'
+                         '!ec',
+             'text': 'Ecrivez une fonction Python `S(t, n, T)` pour renvoyer '
+                     'la valeur de $S(t; n)$.'},
+            {'answer': '',
+             'file': None,
+             'hints': [],
+             'solution': 'La fonction Python `f(t, T)` est la suivante:\n'
+                         '!bc pycod\n'
+                         'def f(t, T):\n'
+                         '    if 0 < t < T/2:\n'
+                         '        return 1\n'
+                         '    elif t == T/2:\n'
+                         '        return 0\n'
+                         '    elif T/2 < t <= T:\n'
+                         '        return -1\n'
+                         '\n'
+                         '!ec',
+             'text': 'Ecrivez une fonction Python `f(t, T)` pour calculer '
+                     '$f(t)$.'},
+            {'answer': '',
+             'file': None,
+             'hints': [],
+             'solution': 'Le tableau de valeurs de $t$ pour $T = 2 \\pi$ est '
+                         'défini comme suit:\n'
+                         '!bc pycod\n'
+                         'T = 2*np.pi\n'
+                         't = np.linspace(0, T, 100)\n'
+                         '\n'
+                         '!ec',
+             'text': "Créer un tableau `t` à l'aide de la fonction `linspace`, "
+                     'du module `numpy`, pour `100` valeurs `t` uniformément '
+                     'espacés dans [0, T]. On prendra $T = 2 \\pi$.'},
+            {'answer': '',
+             'file': None,
+             'hints': [],
+             'solution': 'Le code suivant nous permet d’avoir un tableau de '
+                         '$f(t)$:\n'
+                         '!bc pycod\n'
+                         'F = []\n'
+                         'for ti in t:\n'
+                         '  F.append(f(ti,T))\n'
+                         'F = np.array(F)\n'
+                         '\n'
+                         '!ec',
+             'text': 'Remplir une liste `F` par les valeurs de `f(ti,T)` avec '
+                     '$ti \\in t$. Transformer la liste `F` en un tableau '
+                     '(nous voulons avoir un tableau pour la fonction $f(t)$ '
+                     'avec $t \\in [0, T]$ et $T = 2\\pi$).'},
+            {'answer': '',
+             'file': None,
+             'hints': [],
+             'solution': 'Le programme qui donne le graphique est:\n'
+                         '!bc pycod\n'
+                         "plt.plot(t, S(t, n=1, T=2*pi), 'k-.', label = "
+                         '"S(t;1)")\n'
+                         "plt.plot(t, S(t, n=3, T=2*pi), 'k:', label = "
+                         '"S(t;3)")\n'
+                         "plt.plot(t, S(t, n=20, T=2*pi), 'k:', label = "
+                         '"S(t;20)")\n'
+                         "plt.plot(t, S(t, n=200, T=2*pi), 'k--', label = "
+                         '"S(t;200)")\n'
+                         'plt.plot(t, F, \'k-\', label = "f(t)")\n'
+                         'plt.title(u"Approximation d’une fonction par sa '
+                         'série de Fourier", fontweight=\'bold\')\n'
+                         'plt.ylabel("f(t)/S(t;n)")\n'
+                         'plt.xlabel("t")\n'
+                         'plt.legend()\n'
+                         '\n'
+                         '!ec',
+             'text': 'Tracer $S(t; 1)$, $S(t; 3)$, $S(t; 20)$, $S(t; 200)$ et '
+                     'la fonction exacte $f(t)$ dans le même graphique. Le '
+                     'résultat devrait être similaire au graphique '
+                     'ci-dessous.\n'
+                     '\n'
+                     'FIGURE: [imgs/fourier, width=500 frac=1]'},
+            {'answer': '',
+             'file': None,
+             'hints': [],
+             'solution': "La qualité de l'approximation dépend de $n$. "
+                         '$S(t;n)\\rightarrow f(t)$ quand '
+                         '$n\\rightarrow\\infty$.',
+             'text': 'Quelle est la relation entre la qualité de '
+                     "l'approximation et le choix de la valeur de `n`?"}],
+  'text': 'Nous considérons la fonction constante par morceaux:\n'
+          '\n'
+          '!bt\n'
+          '\\begin{equation}\n'
+          'f(t) = \\left\\lbrace\n'
+          '\\begin{array}{ll}\n'
+          '1, & 0 < t < T/2,\\\\\n'
+          '0, & t = T/2,\\\\\n'
+          '-1, & T/2 < t \\le T\n'
+          '\\end{array}\\right.\n'
+          'label{_auto1}\n'
+          '\\end{equation}\n'
+          '\n'
+          '!et\n'
+          'On peut approcher f(t) par la somme:\n'
+          '!bt\n'
+          '\\begin{equation}\n'
+          'S(t;n) = {4\\over\\pi}\\sum_{i=1}^n {1\\over 2i-1}\n'
+          '\\sin\\left( {2(2i-1)\\pi t\\over T}\\right)\n'
+          'label{_auto2}\n'
+          '\\end{equation}\n'
+          '\n'
+          '!et\n'
+          'On peut montrer que $S(t;n)\\rightarrow f(t)$ quand '
+          '$n\\rightarrow\\infty$',
+  'title': 'Approximer une fonction par une somme de sinus',
+  'type': 'Exercise',
+  'type_visible': True},
+ {'answer': '',
+  'chapter_exercise': None,
+  'chapter_no': None,
+  'chapter_title': None,
+  'chapter_type': None,
+  'closing_remarks': '',
+  'file': None,
+  'heading': '=====',
+  'hints': [],
+  'keywords': None,
+  'label': None,
+  'no': 4,
+  'solution': '',
+  'solution_file': None,
+  'subex': [{'answer': '',
+             'file': None,
+             'hints': [],
+             'solution': 'Les fonctions `ff1(x)`, `gg1(x)`, `ff2(x)` et '
+                         '`gg2(x)` sont les suivantes:\n'
+                         '!bc pycod\n'
+                         '# Importation\n'
+                         'import numpy as np\n'
+                         '\n'
+                         'def ff1(x):\n'
+                         '    S = 0\n'
+                         '    for i in range(12):\n'
+                         '        fn = (8 / np.pi)**(i + 0.5) * dn[i]\n'
+                         '        S += fn * x**(-2 * i - 1)\n'
+                         '    return S\n'
+                         '\n'
+                         'def gg1(x):\n'
+                         '    S = 0\n'
+                         '    for i in range(12):\n'
+                         '        gn = (8 / np.pi)**(i + 0.5) * cn[i]\n'
+                         '        S += gn * x**(-2 * i - 1)\n'
+                         '    return S\n'
+                         '\n'
+                         'def ff2(x):\n'
+                         '    S = 0\n'
+                         '    for i in range(12):\n'
+                         '        fn = (np.pi / 8)**(i + 0.5) * bn[i]\n'
+                         '        S += fn * x**(2 * i + 1)\n'
+                         '    return S\n'
+                         '\n'
+                         'def gg2(x):\n'
+                         '\n'
+                         '    S = 0\n'
+                         '    for i in range(12):\n'
+                         '        gn = (np.pi/8)**(i + 0.5) * an[i]\n'
+                         '        S +=  gn * x**(2 * i + 1)\n'
+                         '    return S\n'
+                         '\n'
+                         '!ec',
+             'text': 'Définir les fonctions `ff1(x)`, `gg1(x)`, `ff2(x)` et '
+                     '`gg2(x)`. Chaque fonction renvoie la valeur de la somme '
+                     'qui lui correspond.'},
+            {'answer': '',
+             'file': None,
+             'hints': [],
+             'solution': 'Les fonctions Python `C(x)` et `S(x)` sont les '
+                         'suivantes:\n'
+                         '\n'
+                         '!bc pycod\n'
+                         'def C(x):\n'
+                         '    CF=[]\n'
+                         '    for i in range(len(x)):\n'
+                         '        if x[i] >= np.sqrt(8/np.pi):\n'
+                         '            cf=0.5 + '
+                         'np.cos((np.pi*x[i]**2)/2)*gg1(x[i]) + '
+                         'np.sin((np.pi*x[i]**2)/2)*ff1(x[i])\n'
+                         '            CF.append(cf)\n'
+                         '        elif 0 <= x[i] < np.sqrt(8/np.pi):\n'
+                         '            cf = np.cos((np.pi*x[i]**2)/2)*gg2(x[i]) '
+                         '+ np.sin((np.pi*x[i]**2)/2)*ff2(x[i])\n'
+                         '            CF.append(cf)\n'
+                         '    return CF\n'
+                         'def S(x):\n'
+                         '    SF=[]\n'
+                         '    for i in range(len(x)):\n'
+                         '        if x[i] >= np.sqrt(8/np.pi):\n'
+                         '            sf = 0.5 - '
+                         'np.cos((np.pi*x[i]**2)/2)*ff1(x[i]) + '
+                         'np.sin((np.pi*x[i]**2)/2)*gg1(x[i])\n'
+                         '            SF.append(sf)\n'
+                         '        elif 0 <= x[i] < sqrt(8/np.pi):\n'
+                         '            sf = '
+                         '-np.cos((np.pi*x[i]**2)/2)*ff2(x[i]) + '
+                         'np.sin((np.pi*x[i]**2)/2)*gg2(x[i])\n'
+                         '            SF.append(sf)\n'
+                         '    return SF\n'
+                         '\n'
+                         '!ec',
+             'text': 'Définir les fonctions Python `C(x)` et `S(x)` qui '
+                     'renvoient respectivement les listes, les valeurs de '
+                     '$C(x)$ et $S(x)$, `CF` et` SF` (en utilisant une boucle '
+                     '`for` pour remplir les listes par exemple).'},
+            {'answer': '',
+             'file': None,
+             'hints': [],
+             'solution': 'Les tableaux `an`, `bn`, `cn` et `dn` sont chargés  '
+                         "à partir du fichier _coef.dat_ à l'aide del a "
+                         'fonction `numpy.loadtxt()`:\n'
+                         '!bc pycod\n'
+                         "an, bn, cn, dn = np.loadtxt('coef.dat', "
+                         "comments='#', usecols=(0, 1, 2, 3), unpack=True)\n"
+                         '\n'
+                         '!ec',
+             'text': 'Créer des tableaux `an`, `bn`, `cn` et `dn` à partir du '
+                     'fichier _coef.dat_.'},
+            {'answer': '',
+             'file': None,
+             'hints': [],
+             'solution': "Le tableau `x` s'écrit:\n"
+                         '!bc pycod\n'
+                         'x = np.linspace(0,10, 500)\n'
+                         '\n'
+                         '!ec',
+             'text': 'Créer un tableau `x`. Utilisez 800 intervalles pour '
+                     'évaluer les points dans [0,10] (cas où $x \\geq 0$).'},
+            {'answer': '',
+             'file': None,
+             'hints': [],
+             'solution': 'Les listes `C(x)` et `S(x)` sont transformés en '
+                         "tableaux `numpy` à l'aide de la fonction "
+                         '`numpy.array()`:\n'
+                         '!bc pycod\n'
+                         'CF = np.array(C(x)); SF = np.array(S(x))\n'
+                         '\n'
+                         '!ec',
+             'text': 'Transformer `C(x)` et `S(x)` en tableaux `numpy`, '
+                     'respectivement `CF` et `SF`.'},
+            {'answer': '',
+             'file': None,
+             'hints': [],
+             'solution': 'La représentation graphique des intégrales de '
+                         'Fresnel et du spirale de Cornu est donc:\n'
+                         '!bc pycod\n'
+                         'plt.figure(figsize=(12,5))\n'
+                         'subplot(1,2,1)\n'
+                         "plt.plot(x, CF,'b', x, SF,'r', linewidth=2)\n"
+                         'plt.xlabel("x", fontweight=\'bold\'); '
+                         'plt.ylabel("C(x) / S(x)", fontweight=\'bold\')\n'
+                         'plt.title(u"Intégrales de Fresnel", fontsize=14, '
+                         "fontweight='bold')\n"
+                         'plt.legend(["C(x)","S(x)"])\n'
+                         'subplot(1,2,2)\n'
+                         "plt.plot(CF, SF, linewidth = 2, color = 'k')\n"
+                         'plt.xlabel("C(x)", fontweight=\'bold\'); '
+                         'plt.ylabel("S(x)", fontweight=\'bold\')\n'
+                         'plt.title("Spirale de Cornu", fontsize=14, '
+                         "fontweight='bold')\n"
+                         '\n'
+                         'plt.savefig("fresnel.png")\n'
+                         'plt.show()\n'
+                         '\n'
+                         '!ec',
+             'text': 'Tracer une grille de figures à 2 colonnes (voir Cours3: '
+                     '"Vues en grille": '
+                     '"https://codetunisia.github.io/CoursSimNum/cours3/md/cours3.html#linstruction-subplot") '
+                     'dont le graphique de gauche représente `CF` et `SF` en '
+                     'fonction de `x` et le graphique de droite représente une '
+                     '"clothoïde": '
+                     '"https://fr.wikipedia.org/wiki/Clotho%C3%AFde" (ou '
+                     'spirale de Cornu, ou Spirale de Fresnel..)`SF` en '
+                     'fonction de `CF`.\n'
+                     'La sortie de ce programme devrait être comme suit:\n'
+                     'FIGURE:[imgs/fresnel, width=600 frac=1]'}],
+  'text': 'Les intégrales de Fresnel ont été introduites par le physicien '
+          'français Augustin Fresnel (1788-1827) lors de ses travaux sur les '
+          'interférences lumineuses (voici un article intéressant à lire: '
+          '"Fresnel, des Mathématiques en Lumière": '
+          '"http://www.mathouriste.eu/Fresnel/Fresnel.html").\n'
+          '\n'
+          'Ces intégrales doivent être calculées numériquement à partir des '
+          'développements en série des intégrales:\n'
+          '\n'
+          '$$\\int_{0}^{x} e^{-i\\frac{\\pi t^{2}}{2}} dt = \\int_{0}^{x} '
+          'cos(t^2) dt -i \\int_{0}^{x} sin(t^2) dt= C(x) -i S(x)$$\n'
+          '\n'
+          'Les fonctions de Fresnel sont des fonctions spéciales, définies '
+          'par:\n'
+          '\n'
+          'Pour $x \\geq \\sqrt{\\frac{8}{\\pi}}$\n'
+          '!bt\n'
+          '\\begin{equation*}\n'
+          '\\begin{aligned}\n'
+          'C(x) &= \\frac{1}{2} + \\cos\\left(\\frac{\\pi x^{2}}{2}\\right) '
+          'gg1 + \\sin\\left(\\frac{\\pi x^{2}}{2}\\right) ff1\\\\\n'
+          'S(x) &=  \\frac{1}{2} - \\cos\\left(\\frac{\\pi x^{2}}{2}\\right) '
+          'ff1 + \\sin\\left(\\frac{\\pi x^{2}}{2}\\right) gg1\n'
+          '\\end{aligned}\n'
+          '\\end{equation*}\n'
+          '\n'
+          '!et\n'
+          'et pour $0 \\leq x < \\sqrt{\\frac{8}{\\pi}}$\n'
+          '!bt\n'
+          '\\begin{equation*}\n'
+          '\\begin{aligned}\n'
+          'C(x) &= \\cos\\left(\\frac{\\pi x^{2}}{2}\\right) gg2 + '
+          '\\sin\\left(\\frac{\\pi x^{2}}{2}\\right) ff2 \\\\\n'
+          'S(x) &= - \\cos\\left(\\frac{\\pi x^{2}}{2}\\right) ff2 + '
+          '\\sin\\left(\\frac{\\pi x^{2}}{2}\\right) gg2\n'
+          '\\end{aligned}\n'
+          '\\end{equation*}\n'
+          '\n'
+          '!et\n'
+          'Où:\n'
+          '!bt\n'
+          '\\begin{equation*}\n'
+          '\\begin{aligned}\n'
+          'ff1 = \\sum\\limits_{n=0}^{11} '
+          '\\frac{d_{n}}{x^{2n+1}}\\left(\\frac{8}{\\pi}\\right)^{n+1/2} & gg1 '
+          '= \\sum\\limits_{n=0}^{11} '
+          '\\frac{c_{n}}{x^{2n+1}}\\left(\\frac{8}{\\pi}\\right)^{n+1/2}\\\\\n'
+          'ff2 = \\sum\\limits_{n=0}^{11} '
+          'b_{n}x^{2n+1}\\left(\\frac{\\pi}{8}\\right)^{n+1/2} & gg2 = '
+          '\\sum\\limits_{n=0}^{11} '
+          'a_{n}x^{2n+1}\\left(\\frac{\\pi}{8}\\right)^{n+1/2}\n'
+          '\\end{aligned}\n'
+          '\\end{equation*}\n'
+          '\n'
+          '!et\n'
+          'et $a_n$, $b_n$, $c_n$ et $d_n$ sont des coefficients tabulés  '
+          '("*J.Boersma Math Computation 14,380(1960)*": '
+          '"https://www.ams.org/journals/mcom/1960-14-072/S0025-5718-1960-0121973-3/S0025-5718-1960-0121973-3.pdf") '
+          'et donnés dans un fichier _coef.dat_:\n'
+          '\n'
+          '!bc\n'
+          '#--------------------------------------------------\n'
+          '#    an            bn          cn           dn\n'
+          '#--------------------------------------------------\n'
+          '+1.595769140 -0.000000033 -0.000000000 +0.199471140\n'
+          '-0.000001702 +4.255387524 -0.024933975 +0.000000023\n'
+          '-6.808568854 -0.000092810 +0.000003936 -0.009351341\n'
+          '-0.000576361 -7.780020400 +0.005770956 +0.000023006\n'
+          '+6.920691902 -0.009520895 +0.000689892 +0.004851466\n'
+          '-0.016898657 +5.075161298 -0.009497136 +0.001903218\n'
+          '-3.050485660 -0.138341947 +0.011948809 -0.017122914\n'
+          '-0.075752419 -1.363729124 -0.006748873 +0.029064067\n'
+          '+0.850663781 -0.403349276 +0.000246420 -0.027928955\n'
+          '-0.025639041 +0.702222016 +0.002102967 +0.016497308\n'
+          '-0.150230960 -0.216195929 -0.001217930 -0.005598515\n'
+          '+0.034404779 +0.019547031 +0.000233939 +0.000838386\n'
+          '\n'
+          '!ec \n'
+          '\n'
+          '\n'
+          'Écrire un programme Python qui calcule les fonctions de Fresnel '
+          '$C(x)$ et $S(x)$ ainsi que leurs représentations graphiques:',
+  'title': 'Fonctions spéciales (intégrales de Fresnel et spirale de Cornu)',
+  'type': 'Exercise',
+  'type_visible': True}]

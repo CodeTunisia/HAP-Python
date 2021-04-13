@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{\PYGZsh{} Importation}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{k}{def} \PYG{n+nf}{ff1}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+    \PYG{n}{S} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{12}\PYG{p}{):}
+        \PYG{n}{fn} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mi}{8} \PYG{o}{/} \PYG{n}{np}\PYG{o}{.}\PYG{n}{pi}\PYG{p}{)}\PYG{o}{**}\PYG{p}{(}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mf}{0.5}\PYG{p}{)} \PYG{o}{*} \PYG{n}{dn}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+        \PYG{n}{S} \PYG{o}{+=} \PYG{n}{fn} \PYG{o}{*} \PYG{n}{x}\PYG{o}{**}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{S}
+
+\PYG{k}{def} \PYG{n+nf}{gg1}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+    \PYG{n}{S} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{12}\PYG{p}{):}
+        \PYG{n}{gn} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mi}{8} \PYG{o}{/} \PYG{n}{np}\PYG{o}{.}\PYG{n}{pi}\PYG{p}{)}\PYG{o}{**}\PYG{p}{(}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mf}{0.5}\PYG{p}{)} \PYG{o}{*} \PYG{n}{cn}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+        \PYG{n}{S} \PYG{o}{+=} \PYG{n}{gn} \PYG{o}{*} \PYG{n}{x}\PYG{o}{**}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{i} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{S}
+
+\PYG{k}{def} \PYG{n+nf}{ff2}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+    \PYG{n}{S} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{12}\PYG{p}{):}
+        \PYG{n}{fn} \PYG{o}{=} \PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{pi} \PYG{o}{/} \PYG{l+m+mi}{8}\PYG{p}{)}\PYG{o}{**}\PYG{p}{(}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mf}{0.5}\PYG{p}{)} \PYG{o}{*} \PYG{n}{bn}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+        \PYG{n}{S} \PYG{o}{+=} \PYG{n}{fn} \PYG{o}{*} \PYG{n}{x}\PYG{o}{**}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{S}
+
+\PYG{k}{def} \PYG{n+nf}{gg2}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+
+    \PYG{n}{S} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{12}\PYG{p}{):}
+        \PYG{n}{gn} \PYG{o}{=} \PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{pi}\PYG{o}{/}\PYG{l+m+mi}{8}\PYG{p}{)}\PYG{o}{**}\PYG{p}{(}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mf}{0.5}\PYG{p}{)} \PYG{o}{*} \PYG{n}{an}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+        \PYG{n}{S} \PYG{o}{+=}  \PYG{n}{gn} \PYG{o}{*} \PYG{n}{x}\PYG{o}{**}\PYG{p}{(}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{S}
+\end{Verbatim}
