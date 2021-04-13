@@ -72,7 +72,7 @@ common_replacements $name.html
 
 # Jupyter notebook
 doconce format ipynb $name
-
+common_replacements $name.ipynb
 # Publish
 dest=../../pub/$name
 if [ ! -d $dest ]; then
