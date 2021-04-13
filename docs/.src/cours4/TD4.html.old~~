@@ -162,59 +162,39 @@ On lance une fus&#233;e verticalement du sol et l&#8217;on mesure pendant les pr
 Calculer la vitesse \( V \) de la fus&#233;e &#224; l&#8217;instant \( t=80 \ s \), par la m&#233;thode des trap&#232;zes.
 
 <p>
-<!-- --- begin solution of exercise --- -->
-
-<p>
-<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
- data-target="#exer_1_1" style="font-size: 80%;"></a>
-<a href="#exer_1_1" data-toggle="collapse">
-<b>Solution.</b>
-</a>
-<div class="collapse-group">
-<p><div class="collapse" id="exer_1_1">
-
-<p>
-On sait que l&#8217;acc&#233;l&#233;ration \( \gamma \) est la d&#233;riv&#233;e de la vitesse \( V \), donc,
-$$
-\begin{align*}
-V(t) &= \int_0^t \gamma(s) ds \\
-I &= V(80) = \int_0^{80} \gamma(s) ds
-\end{align*}
-$$
-
-Calculons \( I \) par la m&#233;thode des trap&#232;zes. Ici, d&#8217;apr&#232;s le tableau des valeurs, \( h = 10 \).
-
-$$
-\begin{equation*}
-I \approx h \left[\frac{1}{2}f(x_0) + \sum_{i=1}^{n-1}f(x_i) + \frac{1}{2}f(x_n) \right]
-\end{equation*}
-$$
-
-$$
-\begin{align*}
-I &\approx 10 \left[\frac{1}{2} \times 30 + \frac{1}{2} \times 50.67 + 31.63 + 33.44 + \ldots + 46.70 \right] \\
-  &\approx 3089.45 \quad ms^{-1}
-\end{align*}
-$$
-
-<p>
-
-<!-- code=python (!bc pycod) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>h <span style="color: #666666">=</span> <span style="color: #666666">10</span>
-I <span style="color: #666666">=</span> <span style="color: #666666">0.5</span> <span style="color: #666666">*</span> (<span style="color: #666666">30</span> <span style="color: #666666">+</span> <span style="color: #666666">50.67</span>) <span style="color: #408080; font-style: italic"># 1/2 * [f(x0) + f(xn)]</span>
-fx <span style="color: #666666">=</span> [<span style="color: #666666">31.63</span>,<span style="color: #666666">33.44</span>,<span style="color: #666666">35.47</span>,<span style="color: #666666">37.75</span>,<span style="color: #666666">40.33</span>,<span style="color: #666666">43.29</span>,<span style="color: #666666">46.70</span>] <span style="color: #408080; font-style: italic"># f(x1) ---&gt; f(xn-1)</span>
-<span style="color: #008000; font-weight: bold">for</span> i <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #008000">len</span>(fx)):
-    I<span style="color: #666666">+=</span> fx[i]
-I<span style="color: #666666">*=</span>h
-<span style="color: #008000">print</span>(I, <span style="color: #BA2121">&quot;ms^-1&quot;</span>)
-</pre></div>
-<p>
-</div></p>
-</div>
-</p>
-
-<p>
-<!-- --- end solution of exercise --- -->
+<!-- !bsol -->
+<!-- On sait que l&#8217;acc&#233;l&#233;ration \( \gamma \) est la d&#233;riv&#233;e de la vitesse \( V \), donc, -->
+<!-- !bt -->
+<!-- \begin{align*} -->
+<!-- V(t) &= \int_0^t \gamma(s) ds \\ -->
+<!-- I &= V(80) = \int_0^{80} \gamma(s) ds -->
+<!-- \end{align*} -->
+<!-- !et -->
+<!-- Calculons \( I \) par la m&#233;thode des trap&#232;zes. Ici, d&#8217;apr&#232;s le tableau des valeurs, \( h = 10 \). -->
+<!--  -->
+<!-- !bt -->
+<!-- \begin{equation*} -->
+<!-- I \approx h \left[\frac{1}{2}f(x_0) + \sum_{i=1}^{n-1}f(x_i) + \frac{1}{2}f(x_n) \right] -->
+<!-- \end{equation*} -->
+<!-- !et -->
+<!-- !bt -->
+<!-- \begin{align*} -->
+<!-- I &\approx 10 \left[\frac{1}{2} \times 30 + \frac{1}{2} \times 50.67 + 31.63 + 33.44 + \ldots + 46.70 \right] \\ -->
+<!-- &\approx 3089.45 \quad&#160;ms^{-1} -->
+<!-- \end{align*} -->
+<!-- !et -->
+<!-- !bc pycod -->
+<!-- h = 10 -->
+<!-- I = 0.5 * (30 + 50.67) # 1/2 * [f(x0) + f(xn)] -->
+<!-- fx = [31.63,33.44,35.47,37.75,40.33,43.29,46.70] # f(x1) ---> f(xn-1) -->
+<!-- for i in range(len(fx)): -->
+<!-- I+= fx[i] -->
+<!-- I*=h -->
+<!-- print(I, "ms^-1") -->
+<!--  -->
+<!-- !ec -->
+<!--  -->
+<!-- !esol -->
 
 <p>
 <!-- !split -->
@@ -348,10 +328,12 @@ P_{s1} = \int_{r_1}^{r_2} \underbrace{4 \times \frac{r^2}{a_0^3} \times e^{-2 \t
 \end{align*}
 $$
 
-avec \( a_0 = 0.529 \) $\AA$, appel&#233; le rayon de Bohr.
+avec \( a_0 = 0.529 \) $A^{\circ}$, appel&#233; le rayon de Bohr.
 
 <p>
 La densit&#233; radiale, repr&#233;sent&#233;e dans la figure <a href="#fig:D_rad">1</a>, est maximale pour \( r = a_0 \). Ce rayon qui maximise la densit&#233; radiale est appel&#233; le <em>rayon orbitalaire</em>.
+
+<p>
 <div class="alert alert-block alert-success alert-text-normal"><b>À noter.</b>
 Dans ce probl&#232;me, les distances seront conserv&#233;es en Angstr&#246;m.
 </div>
@@ -366,11 +348,11 @@ Dans ce probl&#232;me, les distances seront conserv&#233;es en Angstr&#246;m.
 
 <p>
 <b>a)</b>
-D&#233;finir une fonction <code>densite_radiale()</code>, d&#233;finie entre \( 0 \) et \( \infty \) qui prend comme param&#232;tre variable un rayon \( r \) et comme param&#232;tre par d&#233;faut \( a_0 = 0.529 \) $\AA$ et renvoie la valeur \( 4 \times \frac{r^2}{a_0^3} \times e^{-2 \times \frac{r}{a_0}} \).
+D&#233;finir une fonction <code>densite_radiale()</code>, d&#233;finie entre \( 0 \) et \( \infty \) qui prend comme param&#232;tre variable un rayon \( r \) et comme param&#232;tre par d&#233;faut \( a_0 = 0.529 \) $A^{\circ}$ et renvoie la valeur \( 4 \times \frac{r^2}{a_0^3} \times e^{-2 \times \frac{r}{a_0}} \).
 
 <p>
 <b>b)</b>
-Tracer la densit&#233; radiale pour \( r \in [0, 2.6] \quad \AA \), afin d'obtenir le m&#234;me graphique sur la figure <a href="#fig:D_rad">1</a>.
+Tracer la densit&#233; radiale pour \( r \in [0, 2.6] \quad A^{\circ} \), afin d'obtenir le m&#234;me graphique sur la figure <a href="#fig:D_rad">1</a>.
 
 <p>
 <b>c)</b>
@@ -387,91 +369,18 @@ On souhaite d&#233;sormais &#233;valuer la probabilit&#233; de trouver l'&#233;l
 <p>
 <b>f)</b>
 D'apr&#232;s la valeur obtenue &#224; la question pr&#233;c&#233;dente, que penser de la description des trajectoires des &#233;lectrons par orbite autour du noyau ?
+
+<p>
 <div class="alert alert-block alert-success alert-text-normal"><b>À noter.</b>
 On r&#233;pondra en commentaire dans le programme.
 </div>
 
 
 <p>
-<!-- --- begin solution of exercise --- -->
-
-<p>
-<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
- data-target="#exer_2_1" style="font-size: 80%;"></a>
-<a href="#exer_2_1" data-toggle="collapse">
-<b>Solution.</b>
-</a>
-<div class="collapse-group">
-<p><div class="collapse" id="exer_2_1">
-
-<p>
-La solution de l'exercice est dans le programme python suivant:
-<p>
-
-<!-- code=python (!bc pypro) typeset with pygments style "default" -->
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic">## NOM DU PROGRAMME: OrbitalesAtomiques.py</span>
-<span style="color: #408080; font-style: italic">#% IMPORTATION</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">plt</span>
-<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">midpoint_integral</span> <span style="color: #008000; font-weight: bold">import</span> midpoint
-<span style="color: #408080; font-style: italic"># a) </span>
-<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">densite_radiale</span>(r, a0 <span style="color: #666666">=</span> <span style="color: #666666">0.529</span>):
-    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #666666">4</span> <span style="color: #666666">*</span> (r<span style="color: #666666">**2/</span>a0<span style="color: #666666">**3</span>) <span style="color: #666666">*</span> np<span style="color: #666666">.</span>exp(<span style="color: #666666">-2*</span>(r<span style="color: #666666">/</span>a0))
-<span style="color: #408080; font-style: italic"># b)</span>
-r <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0</span>,<span style="color: #666666">2.6</span>, <span style="color: #666666">100</span>)
-
-plt<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">7</span>,<span style="color: #666666">5</span>))
-plt<span style="color: #666666">.</span>plot(r, densite_radiale(r), label <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;densité radiale pour une OA 1s&quot;</span>)
-plt<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">&quot;r &quot;</span><span style="color: #666666">+</span><span style="color: #BA2121">r&quot;$[\AA]$&quot;</span>)
-plt<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">&quot;densité radiale&quot;</span>)
-plt<span style="color: #666666">.</span>legend()
-plt<span style="color: #666666">.</span>show()
-
-<span style="color: #408080; font-style: italic"># c) probabilité de présence de l’électron entre 0 et a0</span>
-a0 <span style="color: #666666">=</span> <span style="color: #666666">0.529</span>
-Pa0 <span style="color: #666666">=</span> midpoint(densite_radiale, <span style="color: #666666">0</span>, a0, <span style="color: #666666">100</span>)
-<span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;La probabilité de présence de l’électron entre 0 et a0 est: &quot;</span>, Pa0)
-
-<span style="color: #408080; font-style: italic"># d) rayon moyen de l&#39;OA 1s</span>
-
-<span style="color: #008000; font-weight: bold">for</span> n <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">21</span>):
-    Prn <span style="color: #666666">=</span> midpoint(densite_radiale, <span style="color: #666666">0</span>, n<span style="color: #666666">*</span>a0, <span style="color: #666666">100</span>)
-    <span style="color: #008000; font-weight: bold">if</span> Prn <span style="color: #666666">&gt;=</span> <span style="color: #666666">0.90</span>:
-        <span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;n = </span><span style="color: #BB6688; font-weight: bold">%d</span><span style="color: #BA2121">, Pr</span><span style="color: #BB6688; font-weight: bold">%d</span><span style="color: #BA2121"> = </span><span style="color: #BB6688; font-weight: bold">%.4f</span><span style="color: #BA2121">&quot;</span><span style="color: #666666">%</span>(n,n,Prn))
-    
-<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
-<span style="color: #BA2121; font-style: italic">r90 = 3*a0. On dit donc que la rayon moyen de l&#39;OA 1s de l&#39;atome d&#39;hydrogène </span>
-<span style="color: #BA2121; font-style: italic">est une sphère de rayon 3*a0, soit à peu près 1.6 Å.</span>
-<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
-
-<span style="color: #408080; font-style: italic"># e)</span>
-Pr <span style="color: #666666">=</span> midpoint(densite_radiale, <span style="color: #666666">0.9*</span>a0, <span style="color: #666666">1.1*</span>a0, <span style="color: #666666">100</span>)
-<span style="color: #008000">print</span>(<span style="color: #BA2121">&quot;La probabilité de présence de l’électron entre 0.9*a0 et 1.1*a0 est: &quot;</span>, Pr)
-
-<span style="color: #408080; font-style: italic"># La probabilité de présence de l’électron entre 0.9*a0 et 1.1*a0 est:  0.10790737203009312</span>
-
-<span style="color: #408080; font-style: italic"># f) Conclusion</span>
-
-<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
-<span style="color: #BA2121; font-style: italic">* La densité radiale de probabilité de présence est maximale </span>
-<span style="color: #BA2121; font-style: italic">pour r = a0 (rayon de Bohr) On dit que c&#39;est le rayon le plus probable.</span>
-
-<span style="color: #BA2121; font-style: italic">* Ce résultat est trompeur, car entre 0.9*a0  et 1.1*a0, la probabilité de présence</span>
-<span style="color: #BA2121; font-style: italic">de l&#39;électron n&#39;est que de 11%.</span>
-
-<span style="color: #BA2121; font-style: italic">* l&#39;atome d&#39;hydrogène est une sphère de rayon 3*a0, soit à peu près 1.6 Å.</span>
-
-<span style="color: #BA2121; font-style: italic">* La probabilité de présence de l’électron 1s est plus élevée à l’extérieur </span>
-<span style="color: #BA2121; font-style: italic">de l’orbite de Bohr. </span>
-<span style="color: #BA2121; font-style: italic">&#39;&#39;&#39;</span>
-</pre></div>
-<p>
-</div></p>
-</div>
-</p>
-
-<p>
-<!-- --- end solution of exercise --- -->
+<!-- !bsol -->
+<!-- La solution de l'exercice est dans le programme python suivant: -->
+<!-- @@@CODE scripts/OrbitalesAtomiques.py -->
+<!-- !esol -->
 
 <p>
 <!-- --- end exercise --- -->

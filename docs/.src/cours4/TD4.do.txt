@@ -17,39 +17,39 @@ FIGURE:[imgs/SpaceX-Starship, width=400 frac=0.7]
 
 
 Calculer la vitesse $V$ de la fusée à l’instant $t=80 \ s$, par la méthode des trapèzes.
-!bsol
-On sait que l’accélération $\gamma$ est la dérivée de la vitesse $V$, donc,
-!bt
-\begin{align*}
-V(t) &= \int_0^t \gamma(s) ds \\
-I &= V(80) = \int_0^{80} \gamma(s) ds
-\end{align*}
-!et
-Calculons $I$ par la méthode des trapèzes. Ici, d’après le tableau des valeurs, $h = 10$.
-
-!bt
-\begin{equation*}
-I \approx h \left[\frac{1}{2}f(x_0) + \sum_{i=1}^{n-1}f(x_i) + \frac{1}{2}f(x_n) \right]
-\end{equation*}
-!et
-!bt
-\begin{align*}
-I &\approx 10 \left[\frac{1}{2} \times 30 + \frac{1}{2} \times 50.67 + 31.63 + 33.44 + \ldots + 46.70 \right] \\
-  &\approx 3089.45 \quad ms^{-1}
-\end{align*}
-!et
-!bc pycod
-h = 10
-I = 0.5 * (30 + 50.67) # 1/2 * [f(x0) + f(xn)]
-fx = [31.63,33.44,35.47,37.75,40.33,43.29,46.70] # f(x1) ---> f(xn-1)
-for i in range(len(fx)):
-    I+= fx[i]
-I*=h
-print(I, "ms^-1")
-
-!ec
-
-!esol
+# !bsol
+# On sait que l’accélération $\gamma$ est la dérivée de la vitesse $V$, donc,
+# !bt
+# \begin{align*}
+# V(t) &= \int_0^t \gamma(s) ds \\
+# I &= V(80) = \int_0^{80} \gamma(s) ds
+# \end{align*}
+# !et
+# Calculons $I$ par la méthode des trapèzes. Ici, d’après le tableau des valeurs, $h = 10$.
+#
+# !bt
+# \begin{equation*}
+# I \approx h \left[\frac{1}{2}f(x_0) + \sum_{i=1}^{n-1}f(x_i) + \frac{1}{2}f(x_n) \right]
+# \end{equation*}
+# !et
+# !bt
+# \begin{align*}
+# I &\approx 10 \left[\frac{1}{2} \times 30 + \frac{1}{2} \times 50.67 + 31.63 + 33.44 + \ldots + 46.70 \right] \\
+#   &\approx 3089.45 \quad ms^{-1}
+# \end{align*}
+# !et
+# !bc pycod
+# h = 10
+# I = 0.5 * (30 + 50.67) # 1/2 * [f(x0) + f(xn)]
+# fx = [31.63,33.44,35.47,37.75,40.33,43.29,46.70] # f(x1) ---> f(xn-1)
+# for i in range(len(fx)):
+#     I+= fx[i]
+# I*=h
+# print(I, "ms^-1")
+#
+# !ec
+#
+# !esol
 
 # !split
 # ===== Exercise: Valeur approchée de $\pi$ =====
@@ -172,9 +172,10 @@ Pour simplifier le problème, on considérera que cette probabilité de présenc
 P_{s1} = \int_{r_1}^{r_2} \underbrace{4 \times \frac{r^2}{a_0^3} \times e^{-2 \times \frac{r}{a_0}}}_\text{densité radiale} dr
 \end{align*}
 !et
-avec $a_0 = 0.529$ $\AA$, appelé le rayon de Bohr.
+avec $a_0 = 0.529$ $A^{\circ}$, appelé le rayon de Bohr.
 
 La densité radiale, représentée dans la figure ref{fig:D_rad}, est maximale pour $r = a_0$. Ce rayon qui maximise la densité radiale est appelé le *rayon orbitalaire*.
+
 !bnotice
 Dans ce problème, les distances seront conservées en Angström.
 !enotice
@@ -183,11 +184,11 @@ FIGURE:[imgs/densite_radiale, width=400 frac=0.7] Densité radiale pour une orbi
 
 
 !bsubex
-Définir une fonction `densite_radiale()`, définie entre $0$ et $\infty$ qui prend comme paramètre variable un rayon $r$ et comme paramètre par défaut $a_0 = 0.529$ $\AA$ et renvoie la valeur $4 \times \frac{r^2}{a_0^3} \times e^{-2 \times \frac{r}{a_0}}$.
+Définir une fonction `densite_radiale()`, définie entre $0$ et $\infty$ qui prend comme paramètre variable un rayon $r$ et comme paramètre par défaut $a_0 = 0.529$ $A^{\circ}$ et renvoie la valeur $4 \times \frac{r^2}{a_0^3} \times e^{-2 \times \frac{r}{a_0}}$.
 !esubex
 
 !bsubex
-Tracer la densité radiale pour $r \in [0, 2.6] \quad \AA$, afin d'obtenir le même graphique sur la figure ref{fig:D_rad}.
+Tracer la densité radiale pour $r \in [0, 2.6] \quad A^{\circ}$, afin d'obtenir le même graphique sur la figure ref{fig:D_rad}.
 !esubex
 
 !bsubex
@@ -204,12 +205,14 @@ On souhaite désormais évaluer la probabilité de trouver l'électron proche du
 
 !bsubex
 D'après la valeur obtenue à la question précédente, que penser de la description des trajectoires des électrons par orbite autour du noyau ?
+
 !bnotice
 On répondra en commentaire dans le programme.
 !enotice
-!bsol
-La solution de l'exercice est dans le programme python suivant:
-@@@CODE scripts/OrbitalesAtomiques.py
-!esol
+
+# !bsol
+# La solution de l'exercice est dans le programme python suivant:
+# @@@CODE scripts/OrbitalesAtomiques.py
+# !esol
 
 !esubex

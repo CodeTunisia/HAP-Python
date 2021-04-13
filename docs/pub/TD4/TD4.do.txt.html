@@ -17,39 +17,39 @@ On lance une fusée verticalement du sol et l’on mesure pendant les premières
 
 
 Calculer la vitesse $V$ de la fusée à l’instant $t=80 \ s$, par la méthode des trapèzes.
-<span style="color: #8B008B; font-weight: bold">!bsol</span>
-On sait que l’accélération $\gamma$ est la dérivée de la vitesse $V$, donc,
-<span style="color: #8B008B; font-weight: bold">!bt</span>
-<span style="color: #658b00">\begin{align*}</span>
-V(t) &amp;= \int_0^t \gamma(s) ds \\
-I &amp;= V(80) = \int_0^{80} \gamma(s) ds
-<span style="color: #658b00">\end{align*}</span>
-<span style="color: #8B008B; font-weight: bold">!et</span>
-Calculons $I$ par la méthode des trapèzes. Ici, d’après le tableau des valeurs, $h = 10$.
-
-<span style="color: #8B008B; font-weight: bold">!bt</span>
-<span style="color: #658b00">\begin{equation*}</span>
-I \approx h \left[\frac{1}{2}f(x_0) + \sum_{i=1}^{n-1}f(x_i) + \frac{1}{2}f(x_n) \right]
-<span style="color: #658b00">\end{equation*}</span>
-<span style="color: #8B008B; font-weight: bold">!et</span>
-<span style="color: #8B008B; font-weight: bold">!bt</span>
-<span style="color: #658b00">\begin{align*}</span>
-I &amp;\approx 10 \left[\frac{1}{2} \times 30 + \frac{1}{2} \times 50.67 + 31.63 + 33.44 + \ldots + 46.70 \right] \\
-  &amp;\approx 3089.45 \quad ms^{-1}
-<span style="color: #658b00">\end{align*}</span>
-<span style="color: #8B008B; font-weight: bold">!et</span>
-<span style="color: #8B008B; font-weight: bold">!bc</span> pycod
-h = 10
-I = 0.5 * (30 + 50.67) # 1/2 * [f(x0) + f(xn)]
-fx = [31.63,33.44,35.47,37.75,40.33,43.29,46.70] # f(x1) ---&gt; f(xn-1)
-for i in range(len(fx)):
-    I+= fx[i]
-I*=h
-print(I, &quot;ms^-1&quot;)
-
-<span style="color: #8B008B; font-weight: bold">!ec</span>
-
-<span style="color: #8B008B; font-weight: bold">!esol</span>
+<span style="color: #228B22"># !bsol</span>
+<span style="color: #228B22"># On sait que l’accélération $\gamma$ est la dérivée de la vitesse $V$, donc,</span>
+<span style="color: #228B22"># !bt</span>
+<span style="color: #228B22"># \begin{align*}</span>
+<span style="color: #228B22"># V(t) &amp;= \int_0^t \gamma(s) ds \\</span>
+<span style="color: #228B22"># I &amp;= V(80) = \int_0^{80} \gamma(s) ds</span>
+<span style="color: #228B22"># \end{align*}</span>
+<span style="color: #228B22"># !et</span>
+<span style="color: #228B22"># Calculons $I$ par la méthode des trapèzes. Ici, d’après le tableau des valeurs, $h = 10$.</span>
+<span style="color: #228B22">#</span>
+<span style="color: #228B22"># !bt</span>
+<span style="color: #228B22"># \begin{equation*}</span>
+<span style="color: #228B22"># I \approx h \left[\frac{1}{2}f(x_0) + \sum_{i=1}^{n-1}f(x_i) + \frac{1}{2}f(x_n) \right]</span>
+<span style="color: #228B22"># \end{equation*}</span>
+<span style="color: #228B22"># !et</span>
+<span style="color: #228B22"># !bt</span>
+<span style="color: #228B22"># \begin{align*}</span>
+<span style="color: #228B22"># I &amp;\approx 10 \left[\frac{1}{2} \times 30 + \frac{1}{2} \times 50.67 + 31.63 + 33.44 + \ldots + 46.70 \right] \\</span>
+<span style="color: #228B22">#   &amp;\approx 3089.45 \quad ms^{-1}</span>
+<span style="color: #228B22"># \end{align*}</span>
+<span style="color: #228B22"># !et</span>
+<span style="color: #228B22"># !bc pycod</span>
+<span style="color: #228B22"># h = 10</span>
+<span style="color: #228B22"># I = 0.5 * (30 + 50.67) # 1/2 * [f(x0) + f(xn)]</span>
+<span style="color: #228B22"># fx = [31.63,33.44,35.47,37.75,40.33,43.29,46.70] # f(x1) ---&gt; f(xn-1)</span>
+<span style="color: #228B22"># for i in range(len(fx)):</span>
+<span style="color: #228B22">#     I+= fx[i]</span>
+<span style="color: #228B22"># I*=h</span>
+<span style="color: #228B22"># print(I, &quot;ms^-1&quot;)</span>
+<span style="color: #228B22">#</span>
+<span style="color: #228B22"># !ec</span>
+<span style="color: #228B22">#</span>
+<span style="color: #228B22"># !esol</span>
 
 <span style="color: #228B22"># !split</span>
 <span style="color: #228B22"># ===== Exercise: Valeur approchée de $\pi$ =====</span>
@@ -172,9 +172,10 @@ Pour simplifier le problème, on considérera que cette probabilité de présenc
 P_{s1} = \int_{r_1}^{r_2} \underbrace{4 \times \frac{r^2}{a_0^3} \times e^{-2 \times \frac{r}{a_0}}}_\text{densité radiale} dr
 <span style="color: #658b00">\end{align*}</span>
 <span style="color: #8B008B; font-weight: bold">!et</span>
-avec $a_0 = 0.529$ $\AA$, appelé le rayon de Bohr.
+avec $a_0 = 0.529$ $A^{\circ}$, appelé le rayon de Bohr.
 
 La densité radiale, représentée dans la figure ref{fig:D_rad}, est maximale pour $r = a_0$. Ce rayon qui maximise la densité radiale est appelé le *rayon orbitalaire*.
+
 <span style="color: #8B008B; font-weight: bold">!bnotice</span>
 Dans ce problème, les distances seront conservées en Angström.
 <span style="color: #8B008B; font-weight: bold">!enotice</span>
@@ -183,11 +184,11 @@ Dans ce problème, les distances seront conservées en Angström.
 
 
 <span style="color: #8B008B; font-weight: bold">!bsubex</span>
-Définir une fonction `densite_radiale()`, définie entre $0$ et $\infty$ qui prend comme paramètre variable un rayon $r$ et comme paramètre par défaut $a_0 = 0.529$ $\AA$ et renvoie la valeur $4 \times \frac{r^2}{a_0^3} \times e^{-2 \times \frac{r}{a_0}}$.
+Définir une fonction `densite_radiale()`, définie entre $0$ et $\infty$ qui prend comme paramètre variable un rayon $r$ et comme paramètre par défaut $a_0 = 0.529$ $A^{\circ}$ et renvoie la valeur $4 \times \frac{r^2}{a_0^3} \times e^{-2 \times \frac{r}{a_0}}$.
 <span style="color: #8B008B; font-weight: bold">!esubex</span>
 
 <span style="color: #8B008B; font-weight: bold">!bsubex</span>
-Tracer la densité radiale pour $r \in [0, 2.6] \quad \AA$, afin d&#39;obtenir le même graphique sur la figure ref{fig:D_rad}.
+Tracer la densité radiale pour $r \in [0, 2.6] \quad A^{\circ}$, afin d&#39;obtenir le même graphique sur la figure ref{fig:D_rad}.
 <span style="color: #8B008B; font-weight: bold">!esubex</span>
 
 <span style="color: #8B008B; font-weight: bold">!bsubex</span>
@@ -204,13 +205,15 @@ On souhaite désormais évaluer la probabilité de trouver l&#39;électron proch
 
 <span style="color: #8B008B; font-weight: bold">!bsubex</span>
 D&#39;après la valeur obtenue à la question précédente, que penser de la description des trajectoires des électrons par orbite autour du noyau ?
+
 <span style="color: #8B008B; font-weight: bold">!bnotice</span>
 On répondra en commentaire dans le programme.
 <span style="color: #8B008B; font-weight: bold">!enotice</span>
-<span style="color: #8B008B; font-weight: bold">!bsol</span>
-La solution de l&#39;exercice est dans le programme python suivant:
-<span style="color: #800080; font-weight: bold">@@@CODE scripts/OrbitalesAtomiques.py</span>
-<span style="color: #8B008B; font-weight: bold">!esol</span>
+
+<span style="color: #228B22"># !bsol</span>
+<span style="color: #228B22"># La solution de l&#39;exercice est dans le programme python suivant:</span>
+<span style="color: #228B22"># @@@CODE scripts/OrbitalesAtomiques.py</span>
+<span style="color: #228B22"># !esol</span>
 
 <span style="color: #8B008B; font-weight: bold">!esubex</span>
 </pre></div>

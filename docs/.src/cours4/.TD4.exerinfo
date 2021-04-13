@@ -17,45 +17,7 @@
   'keywords': None,
   'label': None,
   'no': 1,
-  'solution': 'On sait que l’accélération $\\gamma$ est la dérivée de la '
-              'vitesse $V$, donc,\n'
-              '!bt\n'
-              '\\begin{align*}\n'
-              'V(t) &= \\int_0^t \\gamma(s) ds \\\\\n'
-              'I &= V(80) = \\int_0^{80} \\gamma(s) ds\n'
-              '\\end{align*}\n'
-              '\n'
-              '!et\n'
-              'Calculons $I$ par la méthode des trapèzes. Ici, d’après le '
-              'tableau des valeurs, $h = 10$.\n'
-              '\n'
-              '!bt\n'
-              '\\begin{equation*}\n'
-              'I \\approx h \\left[\\frac{1}{2}f(x_0) + '
-              '\\sum_{i=1}^{n-1}f(x_i) + \\frac{1}{2}f(x_n) \\right]\n'
-              '\\end{equation*}\n'
-              '\n'
-              '!et\n'
-              '!bt\n'
-              '\\begin{align*}\n'
-              'I &\\approx 10 \\left[\\frac{1}{2} \\times 30 + \\frac{1}{2} '
-              '\\times 50.67 + 31.63 + 33.44 + \\ldots + 46.70 \\right] \\\\\n'
-              '  &\\approx 3089.45 \\quad\xa0ms^{-1}\n'
-              '\\end{align*}\n'
-              '\n'
-              '!et\n'
-              '!bc pycod\n'
-              'h = 10\n'
-              'I = 0.5 * (30 + 50.67) # 1/2 * [f(x0) + f(xn)]\n'
-              'fx = [31.63,33.44,35.47,37.75,40.33,43.29,46.70] # f(x1) ---> '
-              'f(xn-1)\n'
-              'for i in range(len(fx)):\n'
-              '    I+= fx[i]\n'
-              'I*=h\n'
-              'print(I, "ms^-1")\n'
-              '\n'
-              '\n'
-              '!ec',
+  'solution': '',
   'solution_file': None,
   'subex': [],
   'text': 'On lance une fusée verticalement du sol et l’on mesure pendant les '
@@ -100,7 +62,7 @@
              'text': 'Définir une fonction `densite_radiale()`, définie entre '
                      '$0$ et $\\infty$ qui prend comme paramètre variable un '
                      'rayon $r$ et comme paramètre par défaut $a_0 = 0.529$ '
-                     '$\\AA$ et renvoie la valeur $4 \\times '
+                     '$A^{\\circ}$ et renvoie la valeur $4 \\times '
                      '\\frac{r^2}{a_0^3} \\times e^{-2 \\times '
                      '\\frac{r}{a_0}}$.'},
             {'answer': '',
@@ -108,8 +70,8 @@
              'hints': [],
              'solution': '',
              'text': 'Tracer la densité radiale pour $r \\in [0, 2.6] \\quad '
-                     "\\AA$, afin d'obtenir le même graphique sur la figure "
-                     'ref{fig:D_rad}.'},
+                     "A^{\\circ}$, afin d'obtenir le même graphique sur la "
+                     'figure ref{fig:D_rad}.'},
             {'answer': '',
              'file': None,
              'hints': [],
@@ -136,84 +98,20 @@
             {'answer': '',
              'file': None,
              'hints': [],
-             'solution': "La solution de l'exercice est dans le programme "
-                         'python suivant:\n'
-                         '!bc pypro\n'
-                         '## NOM DU PROGRAMME: OrbitalesAtomiques.py\n'
-                         '#% IMPORTATION\n'
-                         'import numpy as np\n'
-                         'import matplotlib.pyplot as plt\n'
-                         'from midpoint_integral import midpoint\n'
-                         '# a) \n'
-                         'def densite_radiale(r, a0 = 0.529):\n'
-                         '    return 4 * (r**2/a0**3) * np.exp(-2*(r/a0))\n'
-                         '# b)\n'
-                         'r = np.linspace(0,2.6, 100)\n'
-                         '\n'
-                         'plt.figure(figsize=(7,5))\n'
-                         'plt.plot(r, densite_radiale(r), label = "densité '
-                         'radiale pour une OA 1s")\n'
-                         'plt.xlabel("r "+r"$[\\AA]$")\n'
-                         'plt.ylabel("densité radiale")\n'
-                         'plt.legend()\n'
-                         'plt.show()\n'
-                         '\n'
-                         '# c) probabilité de présence de l’électron entre 0 '
-                         'et a0\n'
-                         'a0 = 0.529\n'
-                         'Pa0 = midpoint(densite_radiale, 0, a0, 100)\n'
-                         'print("La probabilité de présence de l’électron '
-                         'entre 0 et a0 est: ", Pa0)\n'
-                         '\n'
-                         "# d) rayon moyen de l'OA 1s\n"
-                         '\n'
-                         'for n in range(21):\n'
-                         '    Prn = midpoint(densite_radiale, 0, n*a0, 100)\n'
-                         '    if Prn >= 0.90:\n'
-                         '        print("n = %d, Pr%d = %.4f"%(n,n,Prn))\n'
-                         '    \n'
-                         "'''\n"
-                         "r90 = 3*a0. On dit donc que la rayon moyen de l'OA "
-                         "1s de l'atome d'hydrogène \n"
-                         'est une sphère de rayon 3*a0, soit à peu près 1.6 '
-                         'Å.\n'
-                         "'''\n"
-                         '\n'
-                         '# e)\n'
-                         'Pr = midpoint(densite_radiale, 0.9*a0, 1.1*a0, 100)\n'
-                         'print("La probabilité de présence de l’électron '
-                         'entre 0.9*a0 et 1.1*a0 est: ", Pr)\n'
-                         '\n'
-                         '# La probabilité de présence de l’électron entre '
-                         '0.9*a0 et 1.1*a0 est:  0.10790737203009312\n'
-                         '\n'
-                         '# f) Conclusion\n'
-                         '\n'
-                         "'''\n"
-                         '* La densité radiale de probabilité de présence est '
-                         'maximale \n'
-                         "pour r = a0 (rayon de Bohr) On dit que c'est le "
-                         'rayon le plus probable.\n'
-                         '\n'
-                         '* Ce résultat est trompeur, car entre 0.9*a0  et '
-                         '1.1*a0, la probabilité de présence\n'
-                         "de l'électron n'est que de 11%.\n"
-                         '\n'
-                         "* l'atome d'hydrogène est une sphère de rayon 3*a0, "
-                         'soit à peu près 1.6 Å.\n'
-                         '\n'
-                         '* La probabilité de présence de l’électron 1s est '
-                         'plus élevée à l’extérieur \n'
-                         'de l’orbite de Bohr. \n'
-                         "'''\n"
-                         '\n'
-                         '!ec',
+             'solution': '',
              'text': "D'après la valeur obtenue à la question précédente, que "
                      'penser de la description des trajectoires des électrons '
                      'par orbite autour du noyau ?\n'
+                     '\n'
                      '!bnotice\n'
                      'On répondra en commentaire dans le programme.\n'
-                     '!enotice'}],
+                     '!enotice\n'
+                     '\n'
+                     '# !bsol\n'
+                     "# La solution de l'exercice est dans le programme python "
+                     'suivant:\n'
+                     '# @@@CODE scripts/OrbitalesAtomiques.py\n'
+                     '# !esol'}],
   'text': "Pour décrire la trajectoire d'un électron autour d'un noyau, une "
           "description probabiliste est adoptée : l'électron n'est plus "
           'caractérisé par ses coordonnées spatiales mais par sa *probabilité '
@@ -232,11 +130,12 @@
           '\\end{align*}\n'
           '\n'
           '!et\n'
-          'avec $a_0 = 0.529$ $\\AA$, appelé le rayon de Bohr.\n'
+          'avec $a_0 = 0.529$ $A^{\\circ}$, appelé le rayon de Bohr.\n'
           '\n'
           'La densité radiale, représentée dans la figure ref{fig:D_rad}, est '
           'maximale pour $r = a_0$. Ce rayon qui maximise la densité radiale '
           'est appelé le *rayon orbitalaire*.\n'
+          '\n'
           '!bnotice\n'
           'Dans ce problème, les distances seront conservées en Angström.\n'
           '!enotice\n'

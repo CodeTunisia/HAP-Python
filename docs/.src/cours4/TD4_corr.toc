@@ -1,8 +1,6 @@
-\contentsline {paragraph}{Solution.}{2}{section*.3}
-\contentsline {paragraph}{a)}{3}{section*.5}
-\contentsline {paragraph}{b)}{3}{section*.6}
-\contentsline {paragraph}{c)}{3}{section*.7}
-\contentsline {paragraph}{d)}{3}{section*.8}
-\contentsline {paragraph}{e)}{3}{section*.9}
-\contentsline {paragraph}{f)}{3}{section*.10}
-\contentsline {paragraph}{Solution.}{4}{section*.11}
+\contentsline {paragraph}{a)}{2}{section*.4}
+\contentsline {paragraph}{b)}{2}{section*.5}
+\contentsline {paragraph}{c)}{3}{section*.6}
+\contentsline {paragraph}{d)}{3}{section*.7}
+\contentsline {paragraph}{e)}{3}{section*.8}
+\contentsline {paragraph}{f)}{3}{section*.9}

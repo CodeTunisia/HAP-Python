@@ -20,109 +20,7 @@ final,                   % draft: marks overfull hboxes, figures with paths
 \usepackage{bm,ltablex,microtype}
 
 \usepackage[pdftex]{graphicx}
-
-% Packages for typesetting blocks of computer code
-\usepackage{fancyvrb,framed,moreverb}
-
-% Define colors
-\definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
-\definecolor{tucorange}{rgb}{1.0,0.64,0}
-\definecolor{darkorange}{rgb}{.71,0.21,0.01}
-\definecolor{darkgreen}{rgb}{.12,.54,.11}
-\definecolor{myteal}{rgb}{.26, .44, .56}
-\definecolor{gray}{gray}{0.45}
-\definecolor{mediumgray}{gray}{.8}
-\definecolor{lightgray}{gray}{.95}
-\definecolor{brown}{rgb}{0.54,0.27,0.07}
-\definecolor{purple}{rgb}{0.5,0.0,0.5}
-\definecolor{darkgray}{gray}{0.25}
-\definecolor{darkblue}{rgb}{0,0.08,0.45}
-\definecolor{darkblue2}{rgb}{0,0,0.8}
-\definecolor{lightred}{rgb}{1.0,0.39,0.28}
-\definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
-\definecolor{lightblue}{rgb}{0.53,0.81,0.92}
-\definecolor{lightblue2}{rgb}{0.3,0.3,1.0}
-\definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
-\definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
-
-\colorlet{comment_green}{green!50!black}
-\colorlet{string_red}{red!60!black}
-\colorlet{keyword_pink}{magenta!70!black}
-\colorlet{indendifier_green}{green!70!white}
-
-% Backgrounds for code
-\definecolor{cbg_gray}{rgb}{.95, .95, .95}
-\definecolor{bar_gray}{rgb}{.92, .92, .92}
-
-\definecolor{cbg_yellowgray}{rgb}{.95, .95, .85}
-\definecolor{bar_yellowgray}{rgb}{.95, .95, .65}
-
-\colorlet{cbg_yellow2}{yellow!10}
-\colorlet{bar_yellow2}{yellow!20}
-
-\definecolor{cbg_yellow1}{rgb}{.98, .98, 0.8}
-\definecolor{bar_yellow1}{rgb}{.98, .98, 0.4}
-
-\definecolor{cbg_red1}{rgb}{1, 0.85, 0.85}
-\definecolor{bar_red1}{rgb}{1, 0.75, 0.85}
-
-\definecolor{cbg_blue1}{rgb}{0.87843, 0.95686, 1.0}
-\definecolor{bar_blue1}{rgb}{0.7,     0.95686, 1}
-
-%\setlength{\fboxsep}{-1.5mm}  % adjust cod_vpad/pro_vpad background box
-
-%% Background for code blocks (parameter is color name)
-
-%% pro/cod_vpad: gives some vertical padding before and after the text
-%% (but has more simplistic code than _cod/pro_tight+cod/pro).
-%% pro/cod_vpad can be used to enclose Verbatim or lst begin/end for code.
-%% pro/cod calls _pro/cod_tight and has very little vertical padding,
-%% used to enclose Verbatim and other begin/end for code.
-%% (pro/cod is what the ptex2tex program could produce with the
-%% Blue/BlueBar definitions in .ptex2tex.cfg.)
-
-\newenvironment{cod_vpad}[1]{
-   \def\FrameCommand{\colorbox{#1}}
-   \MakeFramed{\FrameRestore}}
-   {\endMakeFramed}
-
-\newenvironment{_cod_tight}[1]{
-   \def\FrameCommand{\colorbox{#1}}
-   \FrameRule0.6pt\MakeFramed {\FrameRestore}\vskip3mm}
-   {\vskip0mm\endMakeFramed}
-
-\newenvironment{cod}[1]{
-\bgroup\rmfamily
-\fboxsep=0mm\relax
-\begin{_cod_tight}{#1}
-\list{}{\parsep=-2mm\parskip=0mm\topsep=0pt\leftmargin=2mm
-\rightmargin=2\leftmargin\leftmargin=4pt\relax}
-\item\relax}
-{\endlist\end{_cod_tight}\egroup}
-
-%% Background for complete program blocks (parameter 1 is color name
-%% for background, parameter 2 is color for left bar)
-\newenvironment{pro_vpad}[2]{
-   \def\FrameCommand{\color{#2}\vrule width 1mm\normalcolor\colorbox{#1}}
-   \MakeFramed{\FrameRestore}}
-   {\endMakeFramed}
-
-\newenvironment{_pro_tight}[2]{
-   \def\FrameCommand{\color{#2}\vrule width 1mm\normalcolor\colorbox{#1}}
-   \FrameRule0.6pt\MakeFramed {\advance\hsize-2mm\FrameRestore}\vskip3mm}
-   {\vskip0mm\endMakeFramed}
-
-\newenvironment{pro}[2]{
-\bgroup\rmfamily
-\fboxsep=0mm\relax
-\begin{_pro_tight}{#1}{#2}
-\list{}{\parsep=-2mm\parskip=0mm\topsep=0pt\leftmargin=2mm
-\rightmargin=2\leftmargin\leftmargin=4pt\relax}
-\item\relax}
-{\endlist\end{_pro_tight}\egroup}
-
-\usepackage{minted}
-\usemintedstyle{default}
+\usepackage{fancyvrb}
 
 \usepackage[T1]{fontenc}
 %\usepackage[latin1]{inputenc}
@@ -428,38 +326,36 @@ $\gamma$ [m $s^{-2}$] & 30 & 31.63 & 33.44 & 35.47 & 37.75 & 40.33 & 43.29 & 46.
 
 Calculer la vitesse $V$ de la fusée à l’instant $t=80 \ s$, par la méthode des trapèzes.
 
-
-% --- begin solution of exercise ---
-\paragraph{Solution.}
-On sait que l’accélération $\gamma$ est la dérivée de la vitesse $V$, donc,
-\begin{align*}
-V(t) &= \int_0^t \gamma(s) ds \\
-I &= V(80) = \int_0^{80} \gamma(s) ds
-\end{align*}
-Calculons $I$ par la méthode des trapèzes. Ici, d’après le tableau des valeurs, $h = 10$.
-
-\begin{equation*}
-I \approx h \left[\frac{1}{2}f(x_0) + \sum_{i=1}^{n-1}f(x_i) + \frac{1}{2}f(x_n) \right]
-\end{equation*}
-\begin{align*}
-I &\approx 10 \left[\frac{1}{2} \times 30 + \frac{1}{2} \times 50.67 + 31.63 + 33.44 + \ldots + 46.70 \right] \\
-  &\approx 3089.45 \quad ms^{-1}
-\end{align*}
-\begin{cod}{cbg_gray}\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=2mm]{python}
-h = 10
-I = 0.5 * (30 + 50.67) # 1/2 * [f(x0) + f(xn)]
-fx = [31.63,33.44,35.47,37.75,40.33,43.29,46.70] # f(x1) ---> f(xn-1)
-for i in range(len(fx)):
-    I+= fx[i]
-I*=h
-print(I, "ms^-1")
-
-\end{minted}
-\end{cod}
-\noindent
-
-% --- end solution of exercise ---
-
+% !bsol
+% On sait que l’accélération $\gamma$ est la dérivée de la vitesse $V$, donc,
+% !bt
+% \begin{align*}
+% V(t) &= \int_0^t \gamma(s) ds \\
+% I &= V(80) = \int_0^{80} \gamma(s) ds
+% \end{align*}
+% % Calculons $I$ par la méthode des trapèzes. Ici, d’après le tableau des valeurs, $h = 10$.
+% 
+% !bt
+% \begin{equation*}
+% I \approx h \left[\frac{1}{2}f(x_0) + \sum_{i=1}^{n-1}f(x_i) + \frac{1}{2}f(x_n) \right]
+% \end{equation*}
+% % !bt
+% \begin{align*}
+% I &\approx 10 \left[\frac{1}{2} \times 30 + \frac{1}{2} \times 50.67 + 31.63 + 33.44 + \ldots + 46.70 \right] \\
+% &\approx 3089.45 \quad ms^{-1}
+% \end{align*}
+% % !bc pycod
+% h = 10
+% I = 0.5 * (30 + 50.67) # 1/2 * [f(x0) + f(xn)]
+% fx = [31.63,33.44,35.47,37.75,40.33,43.29,46.70] # f(x1) ---> f(xn-1)
+% for i in range(len(fx)):
+% I+= fx[i]
+% I*=h
+% print(I, "ms^-1")
+% 
+% !ec
+% 
+% !esol
 
 % !split
 % ===== Exercice: Valeur approchée de $\pi$ =====
@@ -587,9 +483,10 @@ Pour simplifier le problème, on considérera que cette probabilité de présenc
 \begin{align*}
 P_{s1} = \int_{r_1}^{r_2} \underbrace{4 \times \frac{r^2}{a_0^3} \times e^{-2 \times \frac{r}{a_0}}}_\text{densité radiale} dr
 \end{align*}
-avec $a_0 = 0.529$ $\AA$, appelé le rayon de Bohr.
+avec $a_0 = 0.529$ $A^{\circ}$, appelé le rayon de Bohr.
 
 La densité radiale, représentée dans la figure~\ref{fig:D_rad}, est maximale pour $r = a_0$. Ce rayon qui maximise la densité radiale est appelé le \emph{rayon orbitalaire}.
+
 
 \begin{notice_grayiconadmon}[À noter]
 Dans ce problème, les distances seront conservées en Angström.
@@ -609,10 +506,10 @@ Dans ce problème, les distances seront conservées en Angström.
 
 
 \subex{a)}
-Définir une fonction \Verb!densite_radiale()!, définie entre $0$ et $\infty$ qui prend comme paramètre variable un rayon $r$ et comme paramètre par défaut $a_0 = 0.529$ $\AA$ et renvoie la valeur $4 \times \frac{r^2}{a_0^3} \times e^{-2 \times \frac{r}{a_0}}$.
+Définir une fonction \Verb!densite_radiale()!, définie entre $0$ et $\infty$ qui prend comme paramètre variable un rayon $r$ et comme paramètre par défaut $a_0 = 0.529$ $A^{\circ}$ et renvoie la valeur $4 \times \frac{r^2}{a_0^3} \times e^{-2 \times \frac{r}{a_0}}$.
 
 \subex{b)}
-Tracer la densité radiale pour $r \in [0, 2.6] \quad \AA$, afin d'obtenir le même graphique sur la figure~\ref{fig:D_rad}.
+Tracer la densité radiale pour $r \in [0, 2.6] \quad A^{\circ}$, afin d'obtenir le même graphique sur la figure~\ref{fig:D_rad}.
 
 \subex{c)}
 On souhaite déterminer la probabilité de présence de l'électron entre $0$ et $a_0$. Évaluer cette probabilité à l'aide de $100$ rectangles. On pourra vérifier que la réponse obtenue est proche de $0.32$.
@@ -626,77 +523,17 @@ On souhaite désormais évaluer la probabilité de trouver l'électron proche du
 \subex{f)}
 D'après la valeur obtenue à la question précédente, que penser de la description des trajectoires des électrons par orbite autour du noyau ?
 
+
 \begin{notice_grayiconadmon}[À noter]
 On répondra en commentaire dans le programme.
 \end{notice_grayiconadmon} % title: À noter
 
 
 
-
-% --- begin solution of exercise ---
-\paragraph{Solution.}
-La solution de l'exercice est dans le programme python suivant:
-\begin{pro}{cbg_gray}{bar_gray}\begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=2mm]{python}
-## NOM DU PROGRAMME: OrbitalesAtomiques.py
-#% IMPORTATION
-import numpy as np
-import matplotlib.pyplot as plt
-from midpoint_integral import midpoint
-# a) 
-def densite_radiale(r, a0 = 0.529):
-    return 4 * (r**2/a0**3) * np.exp(-2*(r/a0))
-# b)
-r = np.linspace(0,2.6, 100)
-
-plt.figure(figsize=(7,5))
-plt.plot(r, densite_radiale(r), label = "densité radiale pour une OA 1s")
-plt.xlabel("r "+r"$[\AA]$")
-plt.ylabel("densité radiale")
-plt.legend()
-plt.show()
-
-# c) probabilité de présence de l’électron entre 0 et a0
-a0 = 0.529
-Pa0 = midpoint(densite_radiale, 0, a0, 100)
-print("La probabilité de présence de l’électron entre 0 et a0 est: ", Pa0)
-
-# d) rayon moyen de l'OA 1s
-
-for n in range(21):
-    Prn = midpoint(densite_radiale, 0, n*a0, 100)
-    if Prn >= 0.90:
-        print("n = %d, Pr%d = %.4f"%(n,n,Prn))
-    
-'''
-r90 = 3*a0. On dit donc que la rayon moyen de l'OA 1s de l'atome d'hydrogène 
-est une sphère de rayon 3*a0, soit à peu près 1.6 Å.
-'''
-
-# e)
-Pr = midpoint(densite_radiale, 0.9*a0, 1.1*a0, 100)
-print("La probabilité de présence de l’électron entre 0.9*a0 et 1.1*a0 est: ", Pr)
-
-# La probabilité de présence de l’électron entre 0.9*a0 et 1.1*a0 est:  0.10790737203009312
-
-# f) Conclusion
-
-'''
-* La densité radiale de probabilité de présence est maximale 
-pour r = a0 (rayon de Bohr) On dit que c'est le rayon le plus probable.
-
-* Ce résultat est trompeur, car entre 0.9*a0  et 1.1*a0, la probabilité de présence
-de l'électron n'est que de 11%.
-
-* l'atome d'hydrogène est une sphère de rayon 3*a0, soit à peu près 1.6 Å.
-
-* La probabilité de présence de l’électron 1s est plus élevée à l’extérieur 
-de l’orbite de Bohr. 
-'''
-\end{minted}
-\end{pro}
-\noindent
-
-% --- end solution of exercise ---
+% !bsol
+% La solution de l'exercice est dans le programme python suivant:
+% @@@CODE scripts/OrbitalesAtomiques.py
+% !esol
 
 \end{doconceexercise}
 % --- end exercise ---
